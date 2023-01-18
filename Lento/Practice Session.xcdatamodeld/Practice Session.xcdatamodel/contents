@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Improvisation" representedClassName="Improvisation" syncable="YES">
+        <attribute name="improvisation" attributeType="String"/>
+    </entity>
+    <entity name="MainPiece" representedClassName="MainPiece" syncable="YES">
+        <attribute name="mainPiece" attributeType="String"/>
+    </entity>
+    <entity name="PracticeSession" representedClassName="PracticeSession" syncable="YES">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="improvisation" attributeType="String"/>
+        <attribute name="mainPiece" attributeType="String"/>
+        <attribute name="majorScale" attributeType="String"/>
+        <attribute name="minorScale" attributeType="String"/>
+        <attribute name="minutes" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="reportoire" attributeType="String"/>
+        <attribute name="sightReading" attributeType="String"/>
+    </entity>
+    <entity name="Repertoire" representedClassName="Repertoire" syncable="YES">
+        <attribute name="repertoire" attributeType="String"/>
+    </entity>
+    <entity name="SightReading" representedClassName="SightReading" syncable="YES">
+        <attribute name="sightReading" attributeType="String"/>
+    </entity>
+</model>

@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10DD978ECC75EE510F9CA64E /* Pods_Lento.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30584C693DC1FC0775BF336 /* Pods_Lento.framework */; };
+		86019206296CDB4100075E52 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86019205296CDB4100075E52 /* CoreDataManager.swift */; };
+		8613290429765CFC004DFF87 /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8613290329765CFC004DFF87 /* MainHeaderView.swift */; };
+		86214D34296F62EE0073F297 /* SessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86214D33296F62EE0073F297 /* SessionData.swift */; };
+		8642A439296B5E9000A91D45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8642A438296B5E9000A91D45 /* AppDelegate.swift */; };
+		8642A43B296B5E9000A91D45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8642A43A296B5E9000A91D45 /* SceneDelegate.swift */; };
+		8642A43D296B5E9000A91D45 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8642A43C296B5E9000A91D45 /* HomeViewController.swift */; };
+		8642A440296B5E9000A91D45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8642A43E296B5E9000A91D45 /* Main.storyboard */; };
+		8642A442296B5E9300A91D45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8642A441296B5E9300A91D45 /* Assets.xcassets */; };
+		8642A445296B5E9300A91D45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8642A443296B5E9300A91D45 /* LaunchScreen.storyboard */; };
+		8642A44F296B7B0900A91D45 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8642A44E296B7B0900A91D45 /* ItemDetailViewController.swift */; };
+		8642A456296C7C1800A91D45 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8642A455296C7C1800A91D45 /* Constants.swift */; };
+		8642A458296C7C8400A91D45 /* Scales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8642A457296C7C8400A91D45 /* Scales.swift */; };
+		86682D97296FA3E9009E74FC /* Practice Session.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86682D95296FA3E9009E74FC /* Practice Session.xcdatamodeld */; };
+		8669900E29779595008ED4C6 /* copyrightFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669900D29779595008ED4C6 /* copyrightFooterView.swift */; };
+		866990112977AD3B008ED4C6 /* PracticeSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669900F2977AD3B008ED4C6 /* PracticeSession+CoreDataClass.swift */; };
+		866990122977AD3B008ED4C6 /* PracticeSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866990102977AD3B008ED4C6 /* PracticeSession+CoreDataProperties.swift */; };
+		86F63C54296DE79F003B1D2F /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F63C53296DE79F003B1D2F /* Utility.swift */; };
+		86FA4B92296F3394008FA4DE /* SessionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA4B91296F3394008FA4DE /* SessionDetailViewController.swift */; };
+		86FF1B9829708DB0001240EA /* SightReading+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF1B9029708DB0001240EA /* SightReading+CoreDataClass.swift */; };
+		86FF1B9929708DB0001240EA /* SightReading+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF1B9129708DB0001240EA /* SightReading+CoreDataProperties.swift */; };
+		86FF1B9A29708DB0001240EA /* MainPiece+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF1B9229708DB0001240EA /* MainPiece+CoreDataClass.swift */; };
+		86FF1B9B29708DB0001240EA /* MainPiece+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF1B9329708DB0001240EA /* MainPiece+CoreDataProperties.swift */; };
+		86FF1B9C29708DB0001240EA /* Improvisation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF1B9429708DB0001240EA /* Improvisation+CoreDataClass.swift */; };
+		86FF1B9D29708DB0001240EA /* Improvisation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF1B9529708DB0001240EA /* Improvisation+CoreDataProperties.swift */; };
+		86FF1BA22971E851001240EA /* PracticeSessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF1BA02971E851001240EA /* PracticeSessionTableViewCell.swift */; };
+		86FF1BA62971EB50001240EA /* Repertoire+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF1BA42971EB50001240EA /* Repertoire+CoreDataClass.swift */; };
+		86FF1BA72971EB50001240EA /* Repertoire+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF1BA52971EB50001240EA /* Repertoire+CoreDataProperties.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		36333799BBECED246EC2E4A1 /* Pods-Lento.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lento.debug.xcconfig"; path = "Target Support Files/Pods-Lento/Pods-Lento.debug.xcconfig"; sourceTree = "<group>"; };
+		5BA1BA381D74CB49623D0A09 /* Pods-Lento.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lento.release.xcconfig"; path = "Target Support Files/Pods-Lento/Pods-Lento.release.xcconfig"; sourceTree = "<group>"; };
+		86019205296CDB4100075E52 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = ../../../../../CoreDataManager.swift; sourceTree = "<group>"; };
+		8613290329765CFC004DFF87 /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
+		86214D33296F62EE0073F297 /* SessionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionData.swift; sourceTree = "<group>"; };
+		8642A435296B5E9000A91D45 /* Lento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lento.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8642A438296B5E9000A91D45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8642A43A296B5E9000A91D45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8642A43C296B5E9000A91D45 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8642A43F296B5E9000A91D45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8642A441296B5E9300A91D45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8642A444296B5E9300A91D45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8642A446296B5E9300A91D45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8642A44E296B7B0900A91D45 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		8642A455296C7C1800A91D45 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8642A457296C7C8400A91D45 /* Scales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scales.swift; sourceTree = "<group>"; };
+		86682D96296FA3E9009E74FC /* Practice Session.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Practice Session.xcdatamodel"; sourceTree = "<group>"; };
+		8669900D29779595008ED4C6 /* copyrightFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = copyrightFooterView.swift; sourceTree = "<group>"; };
+		8669900F2977AD3B008ED4C6 /* PracticeSession+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeSession+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		866990102977AD3B008ED4C6 /* PracticeSession+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeSession+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		86F63C53296DE79F003B1D2F /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		86F63C63296E2139003B1D2F /* Reference.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Reference.md; sourceTree = "<group>"; };
+		86FA4B91296F3394008FA4DE /* SessionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailViewController.swift; sourceTree = "<group>"; };
+		86FF1B9029708DB0001240EA /* SightReading+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SightReading+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		86FF1B9129708DB0001240EA /* SightReading+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SightReading+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		86FF1B9229708DB0001240EA /* MainPiece+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainPiece+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		86FF1B9329708DB0001240EA /* MainPiece+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainPiece+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		86FF1B9429708DB0001240EA /* Improvisation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Improvisation+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		86FF1B9529708DB0001240EA /* Improvisation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Improvisation+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		86FF1BA02971E851001240EA /* PracticeSessionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeSessionTableViewCell.swift; sourceTree = "<group>"; };
+		86FF1BA42971EB50001240EA /* Repertoire+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repertoire+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		86FF1BA52971EB50001240EA /* Repertoire+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repertoire+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		F30584C693DC1FC0775BF336 /* Pods_Lento.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lento.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8642A432296B5E9000A91D45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10DD978ECC75EE510F9CA64E /* Pods_Lento.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		557E16408F3F930E6634A630 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36333799BBECED246EC2E4A1 /* Pods-Lento.debug.xcconfig */,
+				5BA1BA381D74CB49623D0A09 /* Pods-Lento.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8642A42C296B5E9000A91D45 = {
+			isa = PBXGroup;
+			children = (
+				8642A437296B5E9000A91D45 /* Lento */,
+				8642A436296B5E9000A91D45 /* Products */,
+				557E16408F3F930E6634A630 /* Pods */,
+				DE0FB8CA807DF159BC4AB4A4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8642A436296B5E9000A91D45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8642A435296B5E9000A91D45 /* Lento.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8642A437296B5E9000A91D45 /* Lento */ = {
+			isa = PBXGroup;
+			children = (
+				86FF1B4B296FCB7C001240EA /* CoreDataModel */,
+				8642A454296BB1D100A91D45 /* Model */,
+				8642A453296BB1CA00A91D45 /* Utilities */,
+				8642A452296BB1C600A91D45 /* Components */,
+				8642A451296BB1BF00A91D45 /* Views */,
+				8642A450296BB1B800A91D45 /* Controller */,
+				8642A438296B5E9000A91D45 /* AppDelegate.swift */,
+				86682D95296FA3E9009E74FC /* Practice Session.xcdatamodeld */,
+				8642A43A296B5E9000A91D45 /* SceneDelegate.swift */,
+				8642A43E296B5E9000A91D45 /* Main.storyboard */,
+				8642A441296B5E9300A91D45 /* Assets.xcassets */,
+				8642A443296B5E9300A91D45 /* LaunchScreen.storyboard */,
+				8642A446296B5E9300A91D45 /* Info.plist */,
+				86F63C63296E2139003B1D2F /* Reference.md */,
+			);
+			path = Lento;
+			sourceTree = "<group>";
+		};
+		8642A450296BB1B800A91D45 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8642A44E296B7B0900A91D45 /* ItemDetailViewController.swift */,
+				8642A43C296B5E9000A91D45 /* HomeViewController.swift */,
+				86FA4B91296F3394008FA4DE /* SessionDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8642A451296BB1BF00A91D45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				86FF1BA02971E851001240EA /* PracticeSessionTableViewCell.swift */,
+				8613290329765CFC004DFF87 /* MainHeaderView.swift */,
+				8669900D29779595008ED4C6 /* copyrightFooterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8642A452296BB1C600A91D45 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8642A453296BB1CA00A91D45 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8642A455296C7C1800A91D45 /* Constants.swift */,
+				86019205296CDB4100075E52 /* CoreDataManager.swift */,
+				86F63C53296DE79F003B1D2F /* Utility.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8642A454296BB1D100A91D45 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8642A457296C7C8400A91D45 /* Scales.swift */,
+				86214D33296F62EE0073F297 /* SessionData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		86FF1B4B296FCB7C001240EA /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				8669900F2977AD3B008ED4C6 /* PracticeSession+CoreDataClass.swift */,
+				866990102977AD3B008ED4C6 /* PracticeSession+CoreDataProperties.swift */,
+				86FF1BA42971EB50001240EA /* Repertoire+CoreDataClass.swift */,
+				86FF1BA52971EB50001240EA /* Repertoire+CoreDataProperties.swift */,
+				86FF1B9029708DB0001240EA /* SightReading+CoreDataClass.swift */,
+				86FF1B9129708DB0001240EA /* SightReading+CoreDataProperties.swift */,
+				86FF1B9229708DB0001240EA /* MainPiece+CoreDataClass.swift */,
+				86FF1B9329708DB0001240EA /* MainPiece+CoreDataProperties.swift */,
+				86FF1B9429708DB0001240EA /* Improvisation+CoreDataClass.swift */,
+				86FF1B9529708DB0001240EA /* Improvisation+CoreDataProperties.swift */,
+			);
+			path = CoreDataModel;
+			sourceTree = "<group>";
+		};
+		DE0FB8CA807DF159BC4AB4A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F30584C693DC1FC0775BF336 /* Pods_Lento.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8642A434296B5E9000A91D45 /* Lento */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8642A449296B5E9300A91D45 /* Build configuration list for PBXNativeTarget "Lento" */;
+			buildPhases = (
+				24284785EA3A749F26C7726E /* [CP] Check Pods Manifest.lock */,
+				8642A431296B5E9000A91D45 /* Sources */,
+				8642A432296B5E9000A91D45 /* Frameworks */,
+				8642A433296B5E9000A91D45 /* Resources */,
+				F640CD548D25D47CB042A2A8 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lento;
+			productName = Lento;
+			productReference = 8642A435296B5E9000A91D45 /* Lento.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8642A42D296B5E9000A91D45 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					8642A434296B5E9000A91D45 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = 8642A430296B5E9000A91D45 /* Build configuration list for PBXProject "Lento" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8642A42C296B5E9000A91D45;
+			productRefGroup = 8642A436296B5E9000A91D45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8642A434296B5E9000A91D45 /* Lento */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8642A433296B5E9000A91D45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8642A445296B5E9300A91D45 /* LaunchScreen.storyboard in Resources */,
+				8642A442296B5E9300A91D45 /* Assets.xcassets in Resources */,
+				8642A440296B5E9000A91D45 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24284785EA3A749F26C7726E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lento-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F640CD548D25D47CB042A2A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lento/Pods-Lento-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lento/Pods-Lento-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lento/Pods-Lento-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8642A431296B5E9000A91D45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86FF1B9C29708DB0001240EA /* Improvisation+CoreDataClass.swift in Sources */,
+				86FF1BA22971E851001240EA /* PracticeSessionTableViewCell.swift in Sources */,
+				86FF1BA72971EB50001240EA /* Repertoire+CoreDataProperties.swift in Sources */,
+				866990112977AD3B008ED4C6 /* PracticeSession+CoreDataClass.swift in Sources */,
+				86FF1BA62971EB50001240EA /* Repertoire+CoreDataClass.swift in Sources */,
+				86FF1B9829708DB0001240EA /* SightReading+CoreDataClass.swift in Sources */,
+				86FF1B9A29708DB0001240EA /* MainPiece+CoreDataClass.swift in Sources */,
+				86FF1B9B29708DB0001240EA /* MainPiece+CoreDataProperties.swift in Sources */,
+				8642A44F296B7B0900A91D45 /* ItemDetailViewController.swift in Sources */,
+				86019206296CDB4100075E52 /* CoreDataManager.swift in Sources */,
+				86214D34296F62EE0073F297 /* SessionData.swift in Sources */,
+				8642A43D296B5E9000A91D45 /* HomeViewController.swift in Sources */,
+				86F63C54296DE79F003B1D2F /* Utility.swift in Sources */,
+				866990122977AD3B008ED4C6 /* PracticeSession+CoreDataProperties.swift in Sources */,
+				8642A439296B5E9000A91D45 /* AppDelegate.swift in Sources */,
+				86FA4B92296F3394008FA4DE /* SessionDetailViewController.swift in Sources */,
+				86FF1B9D29708DB0001240EA /* Improvisation+CoreDataProperties.swift in Sources */,
+				8669900E29779595008ED4C6 /* copyrightFooterView.swift in Sources */,
+				8642A43B296B5E9000A91D45 /* SceneDelegate.swift in Sources */,
+				86FF1B9929708DB0001240EA /* SightReading+CoreDataProperties.swift in Sources */,
+				8613290429765CFC004DFF87 /* MainHeaderView.swift in Sources */,
+				86682D97296FA3E9009E74FC /* Practice Session.xcdatamodeld in Sources */,
+				8642A458296C7C8400A91D45 /* Scales.swift in Sources */,
+				8642A456296C7C1800A91D45 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8642A43E296B5E9000A91D45 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8642A43F296B5E9000A91D45 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8642A443296B5E9300A91D45 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8642A444296B5E9300A91D45 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8642A447296B5E9300A91D45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8642A448296B5E9300A91D45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8642A44A296B5E9300A91D45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36333799BBECED246EC2E4A1 /* Pods-Lento.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VHMFV6J7GZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Lento/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Lento;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.8bitoctave.Lento;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8642A44B296B5E9300A91D45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BA1BA381D74CB49623D0A09 /* Pods-Lento.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VHMFV6J7GZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Lento/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Lento;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.8bitoctave.Lento;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8642A430296B5E9000A91D45 /* Build configuration list for PBXProject "Lento" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8642A447296B5E9300A91D45 /* Debug */,
+				8642A448296B5E9300A91D45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8642A449296B5E9300A91D45 /* Build configuration list for PBXNativeTarget "Lento" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8642A44A296B5E9300A91D45 /* Debug */,
+				8642A44B296B5E9300A91D45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		86682D95296FA3E9009E74FC /* Practice Session.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				86682D96296FA3E9009E74FC /* Practice Session.xcdatamodel */,
+			);
+			currentVersion = 86682D96296FA3E9009E74FC /* Practice Session.xcdatamodel */;
+			path = "Practice Session.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8642A42D296B5E9000A91D45 /* Project object */;
+}
