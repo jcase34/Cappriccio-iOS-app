@@ -10,4 +10,3 @@ Future add-on:
 - Searching/sorting practice sessions based on songs, scales, etc. 
 - Charts and summaries showing where you're spending your practice time. 
 - Ways to share your progress with a friend or instructor. 
-# Lento
