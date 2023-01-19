@@ -24,6 +24,7 @@
 		8669900E29779595008ED4C6 /* copyrightFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669900D29779595008ED4C6 /* copyrightFooterView.swift */; };
 		866990112977AD3B008ED4C6 /* PracticeSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669900F2977AD3B008ED4C6 /* PracticeSession+CoreDataClass.swift */; };
 		866990122977AD3B008ED4C6 /* PracticeSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866990102977AD3B008ED4C6 /* PracticeSession+CoreDataProperties.swift */; };
+		868C25AC2978D0B000A1C6B1 /* LentoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C25AB2978D0B000A1C6B1 /* LentoTests.swift */; };
 		86F63C54296DE79F003B1D2F /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F63C53296DE79F003B1D2F /* Utility.swift */; };
 		86FA4B92296F3394008FA4DE /* SessionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA4B91296F3394008FA4DE /* SessionDetailViewController.swift */; };
 		86FF1B9829708DB0001240EA /* SightReading+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF1B9029708DB0001240EA /* SightReading+CoreDataClass.swift */; };
@@ -36,6 +37,16 @@
 		86FF1BA62971EB50001240EA /* Repertoire+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF1BA42971EB50001240EA /* Repertoire+CoreDataClass.swift */; };
 		86FF1BA72971EB50001240EA /* Repertoire+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF1BA52971EB50001240EA /* Repertoire+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		868C25AD2978D0B000A1C6B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8642A42D296B5E9000A91D45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8642A434296B5E9000A91D45;
+			remoteInfo = Lento;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		36333799BBECED246EC2E4A1 /* Pods-Lento.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lento.debug.xcconfig"; path = "Target Support Files/Pods-Lento/Pods-Lento.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,6 +69,8 @@
 		8669900D29779595008ED4C6 /* copyrightFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = copyrightFooterView.swift; sourceTree = "<group>"; };
 		8669900F2977AD3B008ED4C6 /* PracticeSession+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeSession+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		866990102977AD3B008ED4C6 /* PracticeSession+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeSession+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		868C25A92978D0B000A1C6B1 /* LentoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LentoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		868C25AB2978D0B000A1C6B1 /* LentoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentoTests.swift; sourceTree = "<group>"; };
 		86F63C53296DE79F003B1D2F /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		86F63C63296E2139003B1D2F /* Reference.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Reference.md; sourceTree = "<group>"; };
 		86FA4B91296F3394008FA4DE /* SessionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +95,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		868C25A62978D0B000A1C6B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -98,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				8642A437296B5E9000A91D45 /* Lento */,
+				868C25AA2978D0B000A1C6B1 /* LentoTests */,
 				8642A436296B5E9000A91D45 /* Products */,
 				557E16408F3F930E6634A630 /* Pods */,
 				DE0FB8CA807DF159BC4AB4A4 /* Frameworks */,
@@ -108,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				8642A435296B5E9000A91D45 /* Lento.app */,
+				868C25A92978D0B000A1C6B1 /* LentoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +201,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		868C25AA2978D0B000A1C6B1 /* LentoTests */ = {
+			isa = PBXGroup;
+			children = (
+				868C25AB2978D0B000A1C6B1 /* LentoTests.swift */,
+			);
+			path = LentoTests;
+			sourceTree = "<group>";
+		};
 		86FF1B4B296FCB7C001240EA /* CoreDataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +256,24 @@
 			productReference = 8642A435296B5E9000A91D45 /* Lento.app */;
 			productType = "com.apple.product-type.application";
 		};
+		868C25A82978D0B000A1C6B1 /* LentoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 868C25B12978D0B000A1C6B1 /* Build configuration list for PBXNativeTarget "LentoTests" */;
+			buildPhases = (
+				868C25A52978D0B000A1C6B1 /* Sources */,
+				868C25A62978D0B000A1C6B1 /* Frameworks */,
+				868C25A72978D0B000A1C6B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				868C25AE2978D0B000A1C6B1 /* PBXTargetDependency */,
+			);
+			name = LentoTests;
+			productName = LentoTests;
+			productReference = 868C25A92978D0B000A1C6B1 /* LentoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -238,6 +286,10 @@
 				TargetAttributes = {
 					8642A434296B5E9000A91D45 = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					868C25A82978D0B000A1C6B1 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 8642A434296B5E9000A91D45;
 					};
 				};
 			};
@@ -255,6 +307,7 @@
 			projectRoot = "";
 			targets = (
 				8642A434296B5E9000A91D45 /* Lento */,
+				868C25A82978D0B000A1C6B1 /* LentoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -267,6 +320,13 @@
 				8642A445296B5E9300A91D45 /* LaunchScreen.storyboard in Resources */,
 				8642A442296B5E9300A91D45 /* Assets.xcassets in Resources */,
 				8642A440296B5E9000A91D45 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		868C25A72978D0B000A1C6B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +406,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		868C25A52978D0B000A1C6B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				868C25AC2978D0B000A1C6B1 /* LentoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		868C25AE2978D0B000A1C6B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8642A434296B5E9000A91D45 /* Lento */;
+			targetProxy = 868C25AD2978D0B000A1C6B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8642A43E296B5E9000A91D45 /* Main.storyboard */ = {
@@ -498,14 +574,15 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.8bitoctave.Lento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobcase.Lento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -532,14 +609,15 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.8bitoctave.Lento;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacobcase.Lento;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -547,6 +625,44 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		868C25AF2978D0B000A1C6B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VHMFV6J7GZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.8bitoctave.LentoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lento.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Lento";
+			};
+			name = Debug;
+		};
+		868C25B02978D0B000A1C6B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VHMFV6J7GZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.8bitoctave.LentoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lento.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Lento";
 			};
 			name = Release;
 		};
@@ -567,6 +683,15 @@
 			buildConfigurations = (
 				8642A44A296B5E9300A91D45 /* Debug */,
 				8642A44B296B5E9300A91D45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		868C25B12978D0B000A1C6B1 /* Build configuration list for PBXNativeTarget "LentoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				868C25AF2978D0B000A1C6B1 /* Debug */,
+				868C25B02978D0B000A1C6B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

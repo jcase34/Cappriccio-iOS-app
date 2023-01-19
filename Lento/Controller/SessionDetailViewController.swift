@@ -37,12 +37,12 @@ class SessionDetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("tag Number \(tagNumber)")
+        //print("tag Number \(tagNumber)")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         
         //CoreDataCalls
-        print("getting items")
+        //print("getting items")
         if (tagNumber > 11) {
             getSessionItems()
         }

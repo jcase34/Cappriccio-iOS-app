@@ -46,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCt-DY-kM9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2847.1999999999998" y="-296.40179910044981"/>
+            <point key="canvasLocation" x="3786.4000000000001" y="-296.40179910044981"/>
         </scene>
         <!--Add Session-->
         <scene sceneID="TfH-wT-bPv">
@@ -364,7 +364,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Czj-XZ-Fvx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3655.1999999999998" y="-296.40179910044981"/>
+            <point key="canvasLocation" x="4594.3999999999996" y="-296.40179910044981"/>
         </scene>
         <!--Scales Table View-->
         <scene sceneID="KMc-kn-Dn2">
@@ -393,7 +393,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQX-aK-1mM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4504.8000000000002" y="-296.40179910044981"/>
+            <point key="canvasLocation" x="5444" y="-296.40179910044981"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yhl-qe-dL4">
@@ -420,7 +420,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HNc-vl-2L0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2020" y="-296.40179910044981"/>
+            <point key="canvasLocation" x="2959.1999999999998" y="-296.40179910044981"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

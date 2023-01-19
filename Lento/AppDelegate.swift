@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,19 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        /*
-         This is an attempt to provide forward propogation of managedContext to HomeViewController.
-         Navigation controller however is root, so unable to pass through.
-        ---------------------------------------------------------------------
-        guard let vc = window?.rootViewController as? HomeViewController else {
-            print("error")
-            return true
-        }
-
-        vc.managedContext = persistentContainer.viewContext
-        */
-
+   
         return true
     }
 

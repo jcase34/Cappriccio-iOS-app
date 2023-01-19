@@ -104,9 +104,6 @@ class MainHeaderView: UIView {
         NSLayoutConstraint.activate(sessionCountLabelConstraint)
         NSLayoutConstraint.activate(sessionCountDescriptionConstraint)
         NSLayoutConstraint.activate(topLineConstraint)
-        
-        
-        
     }
     
     override func layoutSubviews() {

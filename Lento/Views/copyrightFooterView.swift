@@ -21,23 +21,14 @@ class copyrightFooterView: UIView {
         let label = UILabel()
         label.font = UIFont(name: "helvetica", size: 14)
         label.textColor = .systemGray
-        label.text = "© 2023 8bitoctave.com"
+        label.text = "© 2023 Lento"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-//    fileprivate var mainView: UIView = {
-//        let view = UIView()
-//        view.contentMode = .scaleToFill
-//        view.clipsToBounds = true
-//        view.backgroundColor = .systemBackground
-//        return view
-//    }()
-    
     
     override init (frame: CGRect) {
         super.init(frame: frame)
-        //addSubview(mainView)
         addSubview(appTitleVersionLabel)
         addSubview(copyrightLabel)
         applyConstraints()
@@ -66,7 +57,6 @@ class copyrightFooterView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        //mainView.frame = bounds
     }
 
 }

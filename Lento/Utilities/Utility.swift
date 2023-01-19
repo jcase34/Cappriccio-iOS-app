@@ -23,7 +23,7 @@ func formatDate(date: Date) -> String {
         return formatter
     }()
     
-    var inputDate = formatter.string(from: date)
+    let inputDate = formatter.string(from: date)
     print(inputDate)
     
     return inputDate
