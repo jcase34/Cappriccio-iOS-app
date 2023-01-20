@@ -43,14 +43,15 @@ class SessionDetailViewController: UITableViewController {
         
         //CoreDataCalls
         //print("getting items")
-        if (tagNumber > 11) {
-            getSessionItems()
+        if let tagNumber = tagNumber {
+            if tagNumber > 11 {
+                getSessionItems()
+                configureNavBarFromTagNumber(tagNumber)
+            } else {
+                return
+            }
         }
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        configureNavBarFromTagNumber(tagNumber)
     }
     
     func configureNavBarFromTagNumber(_ tag: Int) {
@@ -60,7 +61,7 @@ class SessionDetailViewController: UITableViewController {
         case SessionItem.minorScale.rawValue:
             self.navigationItem.title = "Select a Minor Scale"
         default:
-            self.navigationItem.title = "Select "
+            self.navigationItem.title = "Select Content"
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         }
     }

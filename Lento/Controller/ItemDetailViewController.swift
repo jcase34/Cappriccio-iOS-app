@@ -35,9 +35,6 @@ class ItemDetailViewController: UITableViewController   {
     //Delegate Property
     weak var delegate: ItemDetailViewControllerDelegate?
     
-    //Propogated CoreData Context
-    //var managedContext: NSManagedObjectContext!
-    
     //propogated properties
     var sessionToBeEdited: PracticeSession!
     
@@ -115,7 +112,6 @@ extension ItemDetailViewController {
     @IBAction func done() {
         
         if let pSession = sessionToBeEdited {
-            
             CoreDataManager.shared.updatePracticeSession(
                 date: datePicker.date,
                 minutes: Int16(minutePicker.selectedRow(inComponent: 0)),
@@ -129,7 +125,7 @@ extension ItemDetailViewController {
             
             delegate?.ItemDetailViewController(self, didFinishEditingSession: pSession)
         } else {
-        
+            
             let pSession = CoreDataManager.shared.insertPracticeSession(
                 date: datePicker.date,
                 minutes: Int16(minutePicker.selectedRow(inComponent: 0)),
@@ -139,9 +135,6 @@ extension ItemDetailViewController {
                 sightReading: sightReadingTextField.text?.isEmpty == true ? "None" : sightReadingTextField.text!,
                 improvisation: improvisationTextField.text?.isEmpty == true ? "None" : improvisationTextField.text!,
                 repertoire: repertoireTextField.text?.isEmpty == true ? "None" : repertoireTextField.text!)!
-            
-            print("major sclae text field: \(majorScaleTextField.text ?? "nil")")
-            
             delegate?.ItemDetailViewController(self, didFinishAddingSession: pSession)
         }
     }
@@ -152,6 +145,7 @@ extension ItemDetailViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    
         performSegue(withIdentifier: "toSessionInformation", sender: indexPath)
     }
 
