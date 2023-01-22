@@ -7,13 +7,14 @@
         <attribute name="mainPiece" attributeType="String"/>
     </entity>
     <entity name="PracticeSession" representedClassName="PracticeSession" syncable="YES">
-        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="improvisation" attributeType="String"/>
         <attribute name="mainPiece" attributeType="String"/>
         <attribute name="majorScale" attributeType="String"/>
         <attribute name="minorScale" attributeType="String"/>
         <attribute name="minutes" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="reportoire" attributeType="String"/>
+        <attribute name="sectionDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="sessionDate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="sightReading" attributeType="String"/>
     </entity>
     <entity name="Repertoire" representedClassName="Repertoire" syncable="YES">

@@ -7,13 +7,3 @@
 
 import Foundation
 
-//struct Session {
-//    var date: Date
-//    var minutes: Int
-//    var majorScale: String?
-//    var minorScale: String?
-//    var mainPiece: String?
-//    var sightReading: String?
-//    var improvisation: String?
-//    var reportoire: String?
-//}

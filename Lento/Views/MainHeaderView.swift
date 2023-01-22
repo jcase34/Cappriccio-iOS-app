@@ -108,7 +108,7 @@ class MainHeaderView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        mainView.frame = bounds
+        
     }
 
 }

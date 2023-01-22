@@ -13,6 +13,9 @@ pSession.minutes = 5
 -By propogating the managedContext, we can perform a save/update/delete at any time.
 CoreDataManager.saveNewSession(session: pSession, sessions: &practiceSessions)
 
+### FRC/Core Data
+https://stackoverflow.com/questions/48254060/how-to-use-nsfetchedresultscontroller-to-update-tableview-content
+
 ### Table view quirks
 -For inserting a new item into a table
 

@@ -19,6 +19,7 @@ let applicationDocumentsDirectory: URL = {
 /*
  
  https://stackoverflow.com/questions/35700281/date-format-in-swift
+ https://stackoverflow.com/questions/24070450/how-to-get-the-current-time-as-datetime
  */
 
 
@@ -48,17 +49,30 @@ func formatDateToMonthSeparator(date: Date) -> String {
     return inputDate
 }
 
-func formatStringToDate(dateString: String) -> Date {
+func formatStringToDate(dateString: String) -> Date? {
     let formatter = DateFormatter()
     
-    if let date = formatter.date(from: dateString) {
-        return date
-    }
-    
-    return Date()
+    guard let date = formatter.date(from: dateString) else {return Date()}
+        
+    return date
 }
 
-func organizeDatesToArray() {
+func formatSectionDate(oldDate: Date) -> Date? {
+    let calendar = Calendar.current
+    let components = calendar.dateComponents([.month, .year], from: oldDate)
+    let date = calendar.date(from: components)
     
+    
+    return date
 }
+
+func formatSessionDate(oldDate: Date) -> Date? {
+    let calendar = Calendar.current
+    let components = calendar.dateComponents([.day, .month, .year], from: oldDate)
+    let date = calendar.date(from: components)
+    
+    return date
+}
+
+
 

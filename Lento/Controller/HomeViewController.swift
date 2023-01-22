@@ -29,16 +29,25 @@ class HomeViewController: UIViewController {
     
     var mainHeaderView: MainHeaderView!
 
-    var fetchedResultsController: NSFetchedResultsController<PracticeSession>!
+    lazy var fetchedResultsController: NSFetchedResultsController<PracticeSession> = {
+        let fetchRequest: NSFetchRequest<PracticeSession> = PracticeSession.fetchRequest()
+        
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(PracticeSession.sectionDate), ascending: false)]
+        
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.shared.managedContext, sectionNameKeyPath: #keyPath(PracticeSession.sectionDate), cacheName: nil)
+        
+        fetchedResultsController.delegate = self
+        return fetchedResultsController
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //print(applicationDocumentsDirectory)
+        print(applicationDocumentsDirectory)
         
-//        print(CoreDataManager.shared.deleteExisting(entityName: K.practiceSession, inMoc: CoreDataManager.shared.managedContext))
+        //print(CoreDataManager.shared.deleteExisting(entityName: K.practiceSession, inMoc: CoreDataManager.shared.managedContext))
         
-        configureFRC()
+       // configureFRC()
         
         //Stylize
         self.navigationController!.navigationBar.prefersLargeTitles = true
@@ -59,6 +68,12 @@ class HomeViewController: UIViewController {
         
         totalPracticeMinutes = CoreDataManager.shared.fetchTotalPracticeSessiondMinutes()
         totalSessionCount = CoreDataManager.shared.fetchTotalPracticeSessionCount()
+        
+        do {
+          try fetchedResultsController.performFetch()
+        } catch let error as NSError {
+          print("Fetching error: \(error), \(error.userInfo)")
+        }
         
     }
     
@@ -84,33 +99,8 @@ class HomeViewController: UIViewController {
     func updateTableHeaderView() {
         mainHeaderView.totalMinutesLabel.text = "\(totalPracticeMinutes)"
         mainHeaderView.sessionCountLabel.text = "\(totalSessionCount)"
-    }
-    
-    func configureFRC() {
-        /*
-        https://stackoverflow.com/questions/48254060/how-to-use-nsfetchedresultscontroller-to-update-tableview-content
-        
-        */
-        if fetchedResultsController == nil {
-            let fetchRequest: NSFetchRequest<PracticeSession> = PracticeSession.fetchRequest()
-            
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(PracticeSession.majorScale), ascending: true)]
-            
-            fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.shared.managedContext, sectionNameKeyPath: #keyPath(PracticeSession.majorScale), cacheName: nil)
-            
-            fetchedResultsController.delegate = self
-        }
-        
-        do {
-          try fetchedResultsController.performFetch()
-        } catch let error as NSError {
-          print("Fetching error: \(error), \(error.userInfo)")
-        }
-    }
+    }        
 }
-
-
-
 
 
 //MARK: - Self Table View Methods
@@ -123,7 +113,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: PracticeSessionTableViewCell.identifier , for: indexPath) as! PracticeSessionTableViewCell
         let pSession = fetchedResultsController.object(at: indexPath)
-        cell.dateLabel.text = formatDateToString(date: pSession.date!)
+        cell.dateLabel.text = formatDateToString(date: pSession.sessionDate!)
         cell.MinutesLabel.text = "\(pSession.minutes):00"
         cell.majorScaleLabel.text = pSession.majorScale
         cell.minorScaleLabel.text = pSession.minorScale
@@ -167,13 +157,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss Z"
         let sectionInfo = fetchedResultsController.sections?[section]
-        return sectionInfo?.name
+        let sectionName = sectionInfo?.name
+        let sectioDate = dateFormatter.date(from: sectionName!)
+        dateFormatter.dateFormat = "MMM YYYY"
+        let sectionTitle = dateFormatter.string(from: sectioDate!)
+        
+        
+        return sectionTitle
         
     }
 }
-
-
 
 
 //MARK: - ItemDetailViewControllerDelegate Methods
@@ -228,7 +224,7 @@ extension HomeViewController: NSFetchedResultsControllerDelegate {
         case .update:
             let cell = tableView.cellForRow(at: indexPath!) as! PracticeSessionTableViewCell
             let pSession = fetchedResultsController.object(at: indexPath!)
-            cell.dateLabel.text = formatDateToString(date: pSession.date!)
+            cell.dateLabel.text = formatDateToString(date: pSession.sessionDate!)
             cell.MinutesLabel.text = "\(pSession.minutes):00"
             cell.majorScaleLabel.text = pSession.majorScale
             cell.minorScaleLabel.text = pSession.minorScale
@@ -254,8 +250,6 @@ extension HomeViewController: NSFetchedResultsControllerDelegate {
           default: break
           }
     }
-
-    
 }
 
 

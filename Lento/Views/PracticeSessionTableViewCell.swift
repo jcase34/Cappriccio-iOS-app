@@ -12,7 +12,6 @@ class PracticeSessionTableViewCell: UITableViewCell {
     //Cell Properties
     static let identifier = "PracticeSessionCell"
     
-    
     //Outlets
     let dateLabel: UILabel = {
         let label = UILabel()
@@ -23,7 +22,7 @@ class PracticeSessionTableViewCell: UITableViewCell {
     
     let MinutesLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "helvetica", size: 16)
+        label.font = UIFont(name: "helvetica", size: 14)
         label.textColor = .systemGray
         return label
     }()
@@ -182,14 +181,14 @@ class PracticeSessionTableViewCell: UITableViewCell {
     
     func configureDateLabel() {
         NSLayoutConstraint.activate([
-            dateLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 50),
-            dateLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 22)
+            dateLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 45),
+            dateLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 25)
             ])
     }
     
     func configureMinutesLabel() {
         NSLayoutConstraint.activate([
-            MinutesLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 1),
+            MinutesLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor),
             MinutesLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 30)
             ])
     }
@@ -258,6 +257,12 @@ class PracticeSessionTableViewCell: UITableViewCell {
             repertoireLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 120)
 
             ])
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
     }
     
     

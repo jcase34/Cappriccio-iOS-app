@@ -14,8 +14,8 @@
             filePath = "Lento/Controller/ItemDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "done()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,10 +30,10 @@
             filePath = "Lento/Controller/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "tableView(_:commit:forRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "HomeViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -46,10 +46,26 @@
             filePath = "Lento/Controller/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
             landmarkName = "controller(_:didChange:at:for:newIndexPath:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "99B31F52-0918-4274-9174-9DD42E65B919"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../CoreDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "persistentContainer"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

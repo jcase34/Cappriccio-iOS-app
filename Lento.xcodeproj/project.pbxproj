@@ -20,12 +20,13 @@
 		8642A44F296B7B0900A91D45 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8642A44E296B7B0900A91D45 /* ItemDetailViewController.swift */; };
 		8642A456296C7C1800A91D45 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8642A455296C7C1800A91D45 /* Constants.swift */; };
 		8642A458296C7C8400A91D45 /* Scales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8642A457296C7C8400A91D45 /* Scales.swift */; };
+		865AA096297D09D10089C971 /* PracticeSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865AA094297D09D10089C971 /* PracticeSession+CoreDataClass.swift */; };
+		865AA097297D09D10089C971 /* PracticeSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865AA095297D09D10089C971 /* PracticeSession+CoreDataProperties.swift */; };
 		86682D97296FA3E9009E74FC /* Practice Session.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86682D95296FA3E9009E74FC /* Practice Session.xcdatamodeld */; };
 		8669900E29779595008ED4C6 /* copyrightFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669900D29779595008ED4C6 /* copyrightFooterView.swift */; };
-		866990112977AD3B008ED4C6 /* PracticeSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8669900F2977AD3B008ED4C6 /* PracticeSession+CoreDataClass.swift */; };
-		866990122977AD3B008ED4C6 /* PracticeSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866990102977AD3B008ED4C6 /* PracticeSession+CoreDataProperties.swift */; };
 		8686AC152979C3DC007CD6AA /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686AC142979C3DC007CD6AA /* StatsViewController.swift */; };
 		868C25AC2978D0B000A1C6B1 /* LentoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C25AB2978D0B000A1C6B1 /* LentoTests.swift */; };
+		86D45DCA297B5FAC008CE847 /* SessionStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D45DC9297B5FAC008CE847 /* SessionStatsView.swift */; };
 		86F63C54296DE79F003B1D2F /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F63C53296DE79F003B1D2F /* Utility.swift */; };
 		86FA4B92296F3394008FA4DE /* SessionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA4B91296F3394008FA4DE /* SessionDetailViewController.swift */; };
 		86FF1B9829708DB0001240EA /* SightReading+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF1B9029708DB0001240EA /* SightReading+CoreDataClass.swift */; };
@@ -66,13 +67,14 @@
 		8642A44E296B7B0900A91D45 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		8642A455296C7C1800A91D45 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8642A457296C7C8400A91D45 /* Scales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scales.swift; sourceTree = "<group>"; };
+		865AA094297D09D10089C971 /* PracticeSession+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeSession+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		865AA095297D09D10089C971 /* PracticeSession+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeSession+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		86682D96296FA3E9009E74FC /* Practice Session.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Practice Session.xcdatamodel"; sourceTree = "<group>"; };
 		8669900D29779595008ED4C6 /* copyrightFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = copyrightFooterView.swift; sourceTree = "<group>"; };
-		8669900F2977AD3B008ED4C6 /* PracticeSession+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeSession+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		866990102977AD3B008ED4C6 /* PracticeSession+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PracticeSession+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		8686AC142979C3DC007CD6AA /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		868C25A92978D0B000A1C6B1 /* LentoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LentoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		868C25AB2978D0B000A1C6B1 /* LentoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentoTests.swift; sourceTree = "<group>"; };
+		86D45DC9297B5FAC008CE847 /* SessionStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStatsView.swift; sourceTree = "<group>"; };
 		86F63C53296DE79F003B1D2F /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		86F63C63296E2139003B1D2F /* Reference.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Reference.md; sourceTree = "<group>"; };
 		86FA4B91296F3394008FA4DE /* SessionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				86FF1BA02971E851001240EA /* PracticeSessionTableViewCell.swift */,
 				8613290329765CFC004DFF87 /* MainHeaderView.swift */,
 				8669900D29779595008ED4C6 /* copyrightFooterView.swift */,
+				86D45DC9297B5FAC008CE847 /* SessionStatsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,8 +218,8 @@
 		86FF1B4B296FCB7C001240EA /* CoreDataModel */ = {
 			isa = PBXGroup;
 			children = (
-				8669900F2977AD3B008ED4C6 /* PracticeSession+CoreDataClass.swift */,
-				866990102977AD3B008ED4C6 /* PracticeSession+CoreDataProperties.swift */,
+				865AA094297D09D10089C971 /* PracticeSession+CoreDataClass.swift */,
+				865AA095297D09D10089C971 /* PracticeSession+CoreDataProperties.swift */,
 				86FF1BA42971EB50001240EA /* Repertoire+CoreDataClass.swift */,
 				86FF1BA52971EB50001240EA /* Repertoire+CoreDataProperties.swift */,
 				86FF1B9029708DB0001240EA /* SightReading+CoreDataClass.swift */,
@@ -385,17 +388,17 @@
 				86FF1B9C29708DB0001240EA /* Improvisation+CoreDataClass.swift in Sources */,
 				86FF1BA22971E851001240EA /* PracticeSessionTableViewCell.swift in Sources */,
 				86FF1BA72971EB50001240EA /* Repertoire+CoreDataProperties.swift in Sources */,
-				866990112977AD3B008ED4C6 /* PracticeSession+CoreDataClass.swift in Sources */,
 				86FF1BA62971EB50001240EA /* Repertoire+CoreDataClass.swift in Sources */,
 				86FF1B9829708DB0001240EA /* SightReading+CoreDataClass.swift in Sources */,
 				86FF1B9A29708DB0001240EA /* MainPiece+CoreDataClass.swift in Sources */,
 				86FF1B9B29708DB0001240EA /* MainPiece+CoreDataProperties.swift in Sources */,
 				8642A44F296B7B0900A91D45 /* ItemDetailViewController.swift in Sources */,
+				86D45DCA297B5FAC008CE847 /* SessionStatsView.swift in Sources */,
 				86019206296CDB4100075E52 /* CoreDataManager.swift in Sources */,
 				86214D34296F62EE0073F297 /* SessionData.swift in Sources */,
 				8642A43D296B5E9000A91D45 /* HomeViewController.swift in Sources */,
+				865AA096297D09D10089C971 /* PracticeSession+CoreDataClass.swift in Sources */,
 				86F63C54296DE79F003B1D2F /* Utility.swift in Sources */,
-				866990122977AD3B008ED4C6 /* PracticeSession+CoreDataProperties.swift in Sources */,
 				8642A439296B5E9000A91D45 /* AppDelegate.swift in Sources */,
 				86FA4B92296F3394008FA4DE /* SessionDetailViewController.swift in Sources */,
 				86FF1B9D29708DB0001240EA /* Improvisation+CoreDataProperties.swift in Sources */,
@@ -403,6 +406,7 @@
 				8686AC152979C3DC007CD6AA /* StatsViewController.swift in Sources */,
 				8642A43B296B5E9000A91D45 /* SceneDelegate.swift in Sources */,
 				86FF1B9929708DB0001240EA /* SightReading+CoreDataProperties.swift in Sources */,
+				865AA097297D09D10089C971 /* PracticeSession+CoreDataProperties.swift in Sources */,
 				8613290429765CFC004DFF87 /* MainHeaderView.swift in Sources */,
 				86682D97296FA3E9009E74FC /* Practice Session.xcdatamodeld in Sources */,
 				8642A458296C7C8400A91D45 /* Scales.swift in Sources */,

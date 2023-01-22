@@ -34,9 +34,9 @@ class StatsViewController: UIViewController, ChartViewDelegate {
         print("here")
         
 
-        pSessions = CoreDataManager.shared.fetchPracticeSessions()
+        pSessions = CoreDataManager.shared.fetchSortedPracticeSessionsByDate()
         
-        setData()
+        //setData()
         barChartView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.width)
         view.addSubview(barChartView)
         barChartView.center = view.center
@@ -50,7 +50,7 @@ class StatsViewController: UIViewController, ChartViewDelegate {
         yValues.removeAll()
         pSessions = CoreDataManager.shared.fetchPracticeSessions()
         
-        setData()
+        //setData()
         stageData()
         barChartView.notifyDataSetChanged()
     }
@@ -68,15 +68,15 @@ class StatsViewController: UIViewController, ChartViewDelegate {
     }
     
     
-    func setData() {
-        months.removeAll()
-        for (i, d) in pSessions.enumerated()  {
-            print(formatDateToString(date: d.date!))
-            months.insert(formatDateToString(date: d.date!), at: i)
-            let entry = BarChartDataEntry(x: Double(i), y: Double(d.minutes))
-            yValues.append(entry)
-        }
-    }
+//    func setData() {
+//        months.removeAll()
+//        for (i, d) in pSessions.enumerated()  {
+//            print(formatDateToString(date: d.date!))
+//            months.insert(formatDateToString(date: d.date!), at: i)
+//            let entry = BarChartDataEntry(x: Double(i), y: Double(d.minutes))
+//            yValues.append(entry)
+//        }
+//    }
     
     
 

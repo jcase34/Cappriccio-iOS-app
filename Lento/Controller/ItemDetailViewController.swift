@@ -45,10 +45,11 @@ class ItemDetailViewController: UITableViewController   {
         // Delegate Assignments
         tableView.delegate = self
         minutePicker.delegate = self
+        
 
         if let session = sessionToBeEdited {
             title = "Edit Session"
-            datePicker.date = session.date!
+            datePicker.date = session.sessionDate!
             minutePicker.selectRow(Int(session.minutes), inComponent: 0, animated: true)
             majorScaleTextField.text = session.majorScale
             minorScaleTextField.text = session.minorScale
@@ -112,8 +113,13 @@ extension ItemDetailViewController {
     @IBAction func done() {
         
         if let pSession = sessionToBeEdited {
+            
+            guard let sectionDate = formatSectionDate(oldDate: datePicker.date) else {return}
+            guard let sessionDate = formatSessionDate(oldDate: datePicker.date) else {return}
+            
             CoreDataManager.shared.updatePracticeSession(
-                date: datePicker.date,
+                sectionDate: sectionDate,
+                sessionDate: sessionDate,
                 minutes: Int16(minutePicker.selectedRow(inComponent: 0)),
                 majorScale: majorScaleTextField.text!,
                 minorScale: minorScaleTextField.text!,
@@ -125,9 +131,14 @@ extension ItemDetailViewController {
             
             delegate?.ItemDetailViewController(self, didFinishEditingSession: pSession)
         } else {
+        //https://stackoverflow.com/questions/30543064/sectionname-in-tableview-with-date
+            
+            guard let sectionDate = formatSectionDate(oldDate: datePicker.date) else {return}
+            guard let sessionDate = formatSessionDate(oldDate: datePicker.date) else {return}
             
             let pSession = CoreDataManager.shared.insertPracticeSession(
-                date: datePicker.date,
+                sectionDate: sectionDate,
+                sessionDate: sessionDate,
                 minutes: Int16(minutePicker.selectedRow(inComponent: 0)),
                 majorScale: majorScaleTextField.text?.isEmpty == true ? "None" : majorScaleTextField.text!,
                 minorScale: minorScaleTextField.text?.isEmpty == true ? "None" : minorScaleTextField.text!,
