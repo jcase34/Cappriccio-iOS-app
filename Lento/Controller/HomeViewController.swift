@@ -11,6 +11,7 @@ import CoreData
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var footerButton: UIButton!
     
     //Properties
     var practiceSessions = [PracticeSession]()
@@ -32,7 +33,7 @@ class HomeViewController: UIViewController {
     lazy var fetchedResultsController: NSFetchedResultsController<PracticeSession> = {
         let fetchRequest: NSFetchRequest<PracticeSession> = PracticeSession.fetchRequest()
         
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(PracticeSession.sectionDate), ascending: false)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(PracticeSession.sessionDate), ascending: false)]
         
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.shared.managedContext, sectionNameKeyPath: #keyPath(PracticeSession.sectionDate), cacheName: nil)
         
@@ -53,7 +54,6 @@ class HomeViewController: UIViewController {
         self.navigationController!.navigationBar.prefersLargeTitles = true
         tableView.rowHeight = UITableView.automaticDimension    
 
-        tableView.tableFooterView = copyrightFooterView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
         
         //cell registration
         tableView.delegate = self
@@ -65,6 +65,9 @@ class HomeViewController: UIViewController {
         tableView.tableHeaderView = mainHeaderView
         
         tableView.register(PracticeSessionTableViewCell.self, forCellReuseIdentifier: PracticeSessionTableViewCell.identifier)
+        
+//        let cellNib = UINib(nibName: "PracticeTableViewCell", bundle: nil)
+//        self.tableView.register(cellNib, forCellReuseIdentifier: PracticeTableViewCell.identifier)
         
         totalPracticeMinutes = CoreDataManager.shared.fetchTotalPracticeSessiondMinutes()
         totalSessionCount = CoreDataManager.shared.fetchTotalPracticeSessionCount()
@@ -99,14 +102,16 @@ class HomeViewController: UIViewController {
     func updateTableHeaderView() {
         mainHeaderView.totalMinutesLabel.text = "\(totalPracticeMinutes)"
         mainHeaderView.sessionCountLabel.text = "\(totalSessionCount)"
-    }        
+    }
+    
 }
+
 
 
 //MARK: - Self Table View Methods
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 230
+        return 160
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,12 +119,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: PracticeSessionTableViewCell.identifier , for: indexPath) as! PracticeSessionTableViewCell
         let pSession = fetchedResultsController.object(at: indexPath)
         cell.dateLabel.text = formatDateToString(date: pSession.sessionDate!)
-        cell.MinutesLabel.text = "\(pSession.minutes):00"
+        cell.minutesLabel.text = "\(pSession.minutes):00"
         cell.majorScaleLabel.text = pSession.majorScale
         cell.minorScaleLabel.text = pSession.minorScale
         cell.mainPieceLabel.text = pSession.mainPiece
         cell.sightReadingLabel.text = pSession.sightReading
-        cell.improvLabel.text = pSession.improvisation
+        cell.improvisationLabel.text = pSession.improvisation
         cell.repertoireLabel.text = pSession.reportoire
         
         return cell
@@ -225,12 +230,12 @@ extension HomeViewController: NSFetchedResultsControllerDelegate {
             let cell = tableView.cellForRow(at: indexPath!) as! PracticeSessionTableViewCell
             let pSession = fetchedResultsController.object(at: indexPath!)
             cell.dateLabel.text = formatDateToString(date: pSession.sessionDate!)
-            cell.MinutesLabel.text = "\(pSession.minutes):00"
+            cell.minutesLabel.text = "\(pSession.minutes):00"
             cell.majorScaleLabel.text = pSession.majorScale
             cell.minorScaleLabel.text = pSession.minorScale
             cell.mainPieceLabel.text = pSession.mainPiece
             cell.sightReadingLabel.text = pSession.sightReading
-            cell.improvLabel.text = pSession.improvisation
+            cell.improvisationLabel.text = pSession.improvisation
             cell.repertoireLabel.text = pSession.reportoire
         case .move:
             tableView.insertRows(at: [newIndexPath!], with: .automatic)

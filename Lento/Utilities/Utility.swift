@@ -26,7 +26,7 @@ let applicationDocumentsDirectory: URL = {
 func formatDateToString(date: Date) -> String {
     let formatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateStyle = .short
+        formatter.dateFormat = "MMM, dd"
         return formatter
     }()
     
@@ -72,6 +72,35 @@ func formatSessionDate(oldDate: Date) -> Date? {
     let date = calendar.date(from: components)
     
     return date
+}
+
+// used to generate last seven days starting from todays date.
+func getLastSevenDayDates() -> [Date:Int16] {
+    let cal = Calendar.current
+    var date = cal.startOfDay(for: Date())
+    var dates = [Date:Int16]()
+    
+    for i in 1...7 {
+        dates[date] = 0
+        let day = cal.component(.day, from: date)
+        date = cal.date(byAdding: .day, value: -1, to: date)!
+        
+    }
+    return dates
+}
+
+func getLastSevenDayInts() -> [Int:Int16] {
+    let cal = Calendar.current
+    var date = cal.startOfDay(for: Date())
+    var days = [Int:Int16]()
+    
+    for i in 1...7 {
+        let day = cal.component(.day, from: date)
+        days[day] = 0
+        date = cal.date(byAdding: .day, value: -1, to: date)!
+        
+    }
+    return days
 }
 
 

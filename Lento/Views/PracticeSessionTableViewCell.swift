@@ -20,7 +20,7 @@ class PracticeSessionTableViewCell: UITableViewCell {
         return label
     }()
     
-    let MinutesLabel: UILabel = {
+    let minutesLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "helvetica", size: 14)
         label.textColor = .systemGray
@@ -83,7 +83,7 @@ class PracticeSessionTableViewCell: UITableViewCell {
         return label
     }()
     
-    let improvLabel: UILabel = {
+    let improvisationLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "helvetica", size: 14)
         return label
@@ -123,7 +123,7 @@ class PracticeSessionTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
-        MinutesLabel.translatesAutoresizingMaskIntoConstraints = false
+        minutesLabel.translatesAutoresizingMaskIntoConstraints = false
         majorScaleLabel.translatesAutoresizingMaskIntoConstraints = false
         majorScaleDescription.translatesAutoresizingMaskIntoConstraints = false
         minorScaleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -132,14 +132,14 @@ class PracticeSessionTableViewCell: UITableViewCell {
         mainPieceDescription.translatesAutoresizingMaskIntoConstraints = false
         sightReadingLabel.translatesAutoresizingMaskIntoConstraints = false
         sightReadingDescription.translatesAutoresizingMaskIntoConstraints = false
-        improvLabel.translatesAutoresizingMaskIntoConstraints = false
+        improvisationLabel.translatesAutoresizingMaskIntoConstraints = false
         improvDescription.translatesAutoresizingMaskIntoConstraints = false
         repertoireLabel.translatesAutoresizingMaskIntoConstraints = false
         repertoireDescription.translatesAutoresizingMaskIntoConstraints = false
         sessionImageView.translatesAutoresizingMaskIntoConstraints = false
         
         contentView.addSubview(dateLabel)
-        contentView.addSubview(MinutesLabel)
+        contentView.addSubview(minutesLabel)
         contentView.addSubview(majorScaleLabel)
         contentView.addSubview(majorScaleDescription)
         contentView.addSubview(minorScaleLabel)
@@ -148,7 +148,7 @@ class PracticeSessionTableViewCell: UITableViewCell {
         contentView.addSubview(mainPieceDescription)
         contentView.addSubview(sightReadingLabel)
         contentView.addSubview(sightReadingDescription)
-        contentView.addSubview(improvLabel)
+        contentView.addSubview(improvisationLabel)
         contentView.addSubview(improvDescription)
         contentView.addSubview(repertoireLabel)
         contentView.addSubview(repertoireDescription)
@@ -181,15 +181,15 @@ class PracticeSessionTableViewCell: UITableViewCell {
     
     func configureDateLabel() {
         NSLayoutConstraint.activate([
-            dateLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 45),
+            dateLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10),
             dateLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 25)
             ])
     }
     
     func configureMinutesLabel() {
         NSLayoutConstraint.activate([
-            MinutesLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor),
-            MinutesLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 30)
+            minutesLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor),
+            minutesLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 30)
             ])
     }
     
@@ -239,22 +239,22 @@ class PracticeSessionTableViewCell: UITableViewCell {
 
     func configureImprovsiation() {
         NSLayoutConstraint.activate([
-            improvDescription.topAnchor.constraint(equalTo: self.sightReadingLabel.topAnchor, constant: 25),
-            improvDescription.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 100),
+            improvDescription.topAnchor.constraint(equalTo: self.minorScaleLabel.topAnchor, constant: 25),
+            improvDescription.leadingAnchor.constraint(equalTo: mainPieceDescription.leadingAnchor, constant: 120),
 
-            improvLabel.topAnchor.constraint(equalTo: improvDescription.bottomAnchor),
-            improvLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 120)
+            improvisationLabel.topAnchor.constraint(equalTo: improvDescription.bottomAnchor),
+            improvisationLabel.leadingAnchor.constraint(equalTo: mainPieceLabel.leadingAnchor, constant: 120)
 
             ])
     }
 
     func configureRepertoire() {
         NSLayoutConstraint.activate([
-            repertoireDescription.topAnchor.constraint(equalTo: self.improvLabel.topAnchor, constant: 25),
-            repertoireDescription.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 100),
+            repertoireDescription.topAnchor.constraint(equalTo: self.improvisationLabel.topAnchor, constant: 25),
+            repertoireDescription.leadingAnchor.constraint(equalTo: sightReadingDescription.leadingAnchor, constant: 120),
 
             repertoireLabel.topAnchor.constraint(equalTo: repertoireDescription.bottomAnchor),
-            repertoireLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 120)
+            repertoireLabel.leadingAnchor.constraint(equalTo: sightReadingLabel.leadingAnchor, constant: 120)
 
             ])
     }
