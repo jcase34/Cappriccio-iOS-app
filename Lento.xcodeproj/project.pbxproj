@@ -25,7 +25,6 @@
 		86682D97296FA3E9009E74FC /* Practice Session.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86682D95296FA3E9009E74FC /* Practice Session.xcdatamodeld */; };
 		8685729F297F03A000185CDA /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8685729E297F03A000185CDA /* AnalyticsViewController.swift */; };
 		868572A1297F548D00185CDA /* PracticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 868572A0297F548D00185CDA /* PracticeTableViewCell.xib */; };
-		8686AC152979C3DC007CD6AA /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686AC142979C3DC007CD6AA /* StatsViewController.swift */; };
 		868C25AC2978D0B000A1C6B1 /* LentoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C25AB2978D0B000A1C6B1 /* LentoTests.swift */; };
 		86B8F81F29805EED00033E25 /* PracticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8F81E29805EED00033E25 /* PracticeTableViewCell.swift */; };
 		86D45DCA297B5FAC008CE847 /* SessionStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D45DC9297B5FAC008CE847 /* SessionStatsView.swift */; };
@@ -74,7 +73,6 @@
 		86682D96296FA3E9009E74FC /* Practice Session.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Practice Session.xcdatamodel"; sourceTree = "<group>"; };
 		8685729E297F03A000185CDA /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
 		868572A0297F548D00185CDA /* PracticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PracticeTableViewCell.xib; sourceTree = "<group>"; };
-		8686AC142979C3DC007CD6AA /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		868C25A92978D0B000A1C6B1 /* LentoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LentoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		868C25AB2978D0B000A1C6B1 /* LentoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentoTests.swift; sourceTree = "<group>"; };
 		86B8F81E29805EED00033E25 /* PracticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeTableViewCell.swift; sourceTree = "<group>"; };
@@ -166,10 +164,9 @@
 		8642A450296BB1B800A91D45 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8642A44E296B7B0900A91D45 /* ItemDetailViewController.swift */,
 				8642A43C296B5E9000A91D45 /* HomeViewController.swift */,
+				8642A44E296B7B0900A91D45 /* ItemDetailViewController.swift */,
 				86FA4B91296F3394008FA4DE /* SessionDetailViewController.swift */,
-				8686AC142979C3DC007CD6AA /* StatsViewController.swift */,
 				8685729E297F03A000185CDA /* AnalyticsViewController.swift */,
 			);
 			path = Controller;
@@ -411,7 +408,6 @@
 				8642A439296B5E9000A91D45 /* AppDelegate.swift in Sources */,
 				86FA4B92296F3394008FA4DE /* SessionDetailViewController.swift in Sources */,
 				86FF1B9D29708DB0001240EA /* Improvisation+CoreDataProperties.swift in Sources */,
-				8686AC152979C3DC007CD6AA /* StatsViewController.swift in Sources */,
 				8642A43B296B5E9000A91D45 /* SceneDelegate.swift in Sources */,
 				86FF1B9929708DB0001240EA /* SightReading+CoreDataProperties.swift in Sources */,
 				865AA097297D09D10089C971 /* PracticeSession+CoreDataProperties.swift in Sources */,

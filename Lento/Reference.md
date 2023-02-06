@@ -16,6 +16,10 @@ CoreDataManager.saveNewSession(session: pSession, sessions: &practiceSessions)
 ### FRC/Core Data
 https://stackoverflow.com/questions/48254060/how-to-use-nsfetchedresultscontroller-to-update-tableview-content
 
+### Charts API help
+
+
+
 ### Table view quirks
 -For inserting a new item into a table
 

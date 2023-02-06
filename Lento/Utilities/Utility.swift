@@ -61,8 +61,6 @@ func formatSectionDate(oldDate: Date) -> Date? {
     let calendar = Calendar.current
     let components = calendar.dateComponents([.month, .year], from: oldDate)
     let date = calendar.date(from: components)
-    
-    
     return date
 }
 
@@ -70,8 +68,12 @@ func formatSessionDate(oldDate: Date) -> Date? {
     let calendar = Calendar.current
     let components = calendar.dateComponents([.day, .month, .year], from: oldDate)
     let date = calendar.date(from: components)
-    
     return date
+}
+
+func convertDateToDayInteger(oldDate: Date) -> Int {
+    let calendar = Calendar.current
+    return calendar.component(.day, from: oldDate)
 }
 
 // used to generate last seven days starting from todays date.
@@ -89,14 +91,14 @@ func getLastSevenDayDates() -> [Date:Int16] {
     return dates
 }
 
-func getLastSevenDayInts() -> [Int:Int16] {
+func getLastSevenDayInts() -> [Int] {
     let cal = Calendar.current
     var date = cal.startOfDay(for: Date())
-    var days = [Int:Int16]()
+    var days = [Int]()
     
     for i in 1...7 {
         let day = cal.component(.day, from: date)
-        days[day] = 0
+        days.append(day)
         date = cal.date(byAdding: .day, value: -1, to: date)!
         
     }

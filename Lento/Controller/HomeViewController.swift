@@ -30,10 +30,15 @@ class HomeViewController: UIViewController {
     
     var mainHeaderView: MainHeaderView!
 
+    //
+    
     lazy var fetchedResultsController: NSFetchedResultsController<PracticeSession> = {
         let fetchRequest: NSFetchRequest<PracticeSession> = PracticeSession.fetchRequest()
         
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(PracticeSession.sessionDate), ascending: false)]
+        let sessionSort = NSSortDescriptor(key: #keyPath(PracticeSession.sessionDate), ascending: false)
+        let sectionSort = NSSortDescriptor(key: #keyPath(PracticeSession.sectionDate), ascending: false)
+        
+        fetchRequest.sortDescriptors = [sectionSort, sessionSort]
         
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataManager.shared.managedContext, sectionNameKeyPath: #keyPath(PracticeSession.sectionDate), cacheName: nil)
         
@@ -45,10 +50,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         print(applicationDocumentsDirectory)
-        
-        //print(CoreDataManager.shared.deleteExisting(entityName: K.practiceSession, inMoc: CoreDataManager.shared.managedContext))
-        
-       // configureFRC()
         
         //Stylize
         self.navigationController!.navigationBar.prefersLargeTitles = true
@@ -64,10 +65,10 @@ class HomeViewController: UIViewController {
         updateTableHeaderView()
         tableView.tableHeaderView = mainHeaderView
         
-        tableView.register(PracticeSessionTableViewCell.self, forCellReuseIdentifier: PracticeSessionTableViewCell.identifier)
+//        tableView.register(PracticeSessionTableViewCell.self, forCellReuseIdentifier: PracticeSessionTableViewCell.identifier)
         
-//        let cellNib = UINib(nibName: "PracticeTableViewCell", bundle: nil)
-//        self.tableView.register(cellNib, forCellReuseIdentifier: PracticeTableViewCell.identifier)
+        let cellNib = UINib(nibName: "PracticeTableViewCell", bundle: nil)
+        self.tableView.register(cellNib, forCellReuseIdentifier: PracticeTableViewCell.identifier)
         
         totalPracticeMinutes = CoreDataManager.shared.fetchTotalPracticeSessiondMinutes()
         totalSessionCount = CoreDataManager.shared.fetchTotalPracticeSessionCount()
@@ -116,10 +117,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: PracticeSessionTableViewCell.identifier , for: indexPath) as! PracticeSessionTableViewCell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: PracticeSessionTableViewCell.identifier , for: indexPath) as! PracticeSessionTableViewCell
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: PracticeTableViewCell.identifier , for: indexPath) as! PracticeTableViewCell
+        
         let pSession = fetchedResultsController.object(at: indexPath)
         cell.dateLabel.text = formatDateToString(date: pSession.sessionDate!)
-        cell.minutesLabel.text = "\(pSession.minutes):00"
+        cell.minutesLabel.text = "\(pSession.minutes):00 Minutes"
         cell.majorScaleLabel.text = pSession.majorScale
         cell.minorScaleLabel.text = pSession.minorScale
         cell.mainPieceLabel.text = pSession.mainPiece
@@ -170,10 +174,20 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         dateFormatter.dateFormat = "MMM YYYY"
         let sectionTitle = dateFormatter.string(from: sectioDate!)
         
-        
         return sectionTitle
         
     }
+    
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let view: UIView = {
+//            let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 100))
+//            view.backgroundColor = .red
+//            return view
+//        }()
+//        
+//        return view
+//        
+//    }
 }
 
 
@@ -227,10 +241,12 @@ extension HomeViewController: NSFetchedResultsControllerDelegate {
         case .delete:
             tableView.deleteRows(at: [indexPath!], with: .automatic)
         case .update:
-            let cell = tableView.cellForRow(at: indexPath!) as! PracticeSessionTableViewCell
+//            let cell = tableView.cellForRow(at: indexPath!) as! PracticeSessionTableViewCell
+            
+            let cell = tableView.cellForRow(at: indexPath!) as! PracticeTableViewCell
             let pSession = fetchedResultsController.object(at: indexPath!)
             cell.dateLabel.text = formatDateToString(date: pSession.sessionDate!)
-            cell.minutesLabel.text = "\(pSession.minutes):00"
+            cell.minutesLabel.text = "\(pSession.minutes):00 Minutes"
             cell.majorScaleLabel.text = pSession.majorScale
             cell.minorScaleLabel.text = pSession.minorScale
             cell.mainPieceLabel.text = pSession.mainPiece
@@ -238,6 +254,7 @@ extension HomeViewController: NSFetchedResultsControllerDelegate {
             cell.improvisationLabel.text = pSession.improvisation
             cell.repertoireLabel.text = pSession.reportoire
         case .move:
+            tableView.deleteRows(at: [indexPath!], with: .automatic)
             tableView.insertRows(at: [newIndexPath!], with: .automatic)
         default:
             return

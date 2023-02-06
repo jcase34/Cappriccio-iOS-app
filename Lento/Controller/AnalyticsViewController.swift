@@ -8,107 +8,131 @@
 import UIKit
 import Charts
 
+class AnalyticsViewController: UITableViewController, ChartViewDelegate {
 
-class myValueFormatter : IndexAxisValueFormatter {
-    override func stringForValue( _ value: Double, axis _: AxisBase?) -> String {
-        var dateMatches = [Double:String]()
-        let cal = Calendar.current
-        var date = cal.startOfDay(for: Date())
-        let formatter = DateFormatter()
-        formatter.dateFormat = "E"
-        for i in 1...7 {
-            let day = Double(cal.component(.day, from: date))
-            dateMatches[day] = formatter.string(from: date)
-            date = cal.date(byAdding: .day, value: -1, to: date)!
-        }
-        
-        if dateMatches.keys.contains(value) {
-            return dateMatches[value]!
-        } else {
-            return ""
-        }
-    }
-}
-
-
-class AnalyticsViewController: UITableViewController {
-
-    @IBOutlet weak var practiceBarChartView: UIView!
+    @IBOutlet weak var ChartDateLabel: UILabel!
+    @IBOutlet weak var sevenDayPracticeBarChartView: UIView!
     lazy var barChartView: BarChartView = {
         let chartView = BarChartView()
         chartView.backgroundColor = .systemGray
-        chartView.xAxis.valueFormatter = myValueFormatter()
+        chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: days)
         chartView.rightAxis.enabled = false
         chartView.isUserInteractionEnabled = false
+        chartView.legend.enabled = false
         
+        //configure xAxis
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
         xAxis.granularity = 1.0
         xAxis.drawGridLinesEnabled = false
+        xAxis.labelFont = .boldSystemFont(ofSize: 12)
+
         
-        
+        //configure yAxis
         let yAxis = chartView.leftAxis
+        yAxis.labelFont = .boldSystemFont(ofSize: 12)
         yAxis.labelPosition = .outsideChart
         yAxis.axisMinimum = 0
-        
+        yAxis.granularity = 5
+        yAxis.setLabelCount(10, force: false)
         
         
         return chartView
     }()
     
-    var pSessions = [PracticeSession]()
-    var lastSevenDates = [Date:Int16]()
-    var weeklyData = [Int:Int16]()
-    var yMinutes = [ChartDataEntry]()
+    public let days: [String] = {
+        var days = [String]()
+        let cal = Calendar.current
+        var date = cal.startOfDay(for: Date())
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E"
+        for _ in 1...7 {
+            //day is the calendar component of current date
+            let day = Double(cal.component(.day, from: date))
+            let formattedDay = formatter.string(from: date)
+            date = cal.date(byAdding: .day, value: -1, to: date)!
+            days.append(formattedDay)
+            
+        }
+        return days.reversed()
+    }()
+    
+    var pSessions: [PracticeSession] = []
+    var dayIndexDictionary = [Int:Int]() //e.g day (15) : minutes (30)
+    var dataEntries = [ChartDataEntry]()
+    var weeklyData: [Int16] = [0,0,0,0,0,0,0]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        barChartView.frame = CGRect(x: 0, y: 0, width: practiceBarChartView.frame.width, height: practiceBarChartView.frame.height)
-        barChartView.center
-        lastSevenDates = getLastSevenDayDates()
-        //print(lastSevenDaysData)
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "E"
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("refresh chart")
+        //fetch all sessions and organize by date. Later fix with a fetch limit up to 20 or so
         pSessions = CoreDataManager.shared.fetchSortedPracticeSessionsByDate()!
-        for p in pSessions {
-            if let date = p.sessionDate {
-                if lastSevenDates.keys.contains(date) {
-                    weeklyData[Calendar.current.component(.day, from: date)] = p.minutes
-                }
-            }
-        }
-        
-        print(weeklyData)
-        setData()
-        stageData()
-        practiceBarChartView.addSubview(barChartView)
-        barChartView.animate(xAxisDuration: 1)
-        barChartView.animate(yAxisDuration: 1)
+        print(pSessions.isEmpty)
+        createBarChartFromData()
     }
 }
 
 
 //MARK: - Bar Chart View Control
-extension AnalyticsViewController {
-    func setData() {
-        for (key,value) in weeklyData  {
-            let entry = BarChartDataEntry(x: Double(key), y: Double(value))
-            yMinutes.append(entry)
+extension AnalyticsViewController  {
+    
+    func fetchDataforChartEntries() {
+        for (n,x) in getLastSevenDayInts().reversed().enumerated() {
+            dayIndexDictionary[x] = n
         }
-        print(yMinutes)
+        for p in pSessions {
+            if let date = p.sessionDate {
+                if dayIndexDictionary.keys.contains(convertDateToDayInteger(oldDate: date)) {
+                    weeklyData[dayIndexDictionary[convertDateToDayInteger(oldDate: date)]!] += p.minutes
+                }
+            }
+        }
+//        print("Weekly data contains days:minutes: \(weeklyData)")
+    }
+    
+    func createDataEntries() {
+        for (index,val) in weeklyData.enumerated()  {
+            let entry = BarChartDataEntry(x: Double(index), y: Double(val))
+            dataEntries.append(entry)
+        }
+        
     }
     
     
-    func stageData() {
-        let dataSet = BarChartDataSet(entries: yMinutes)
-        dataSet.colors = ChartColorTemplates.joyful()
+    func assignDataEntries() {
+        print(dataEntries)
+        let dataSet = BarChartDataSet(entries: dataEntries)
+        dataSet.setColor(NSUIColor(red: 15.0/255.0, green: 100.0/255.0, blue: 50/255.0, alpha: 1.0))
         let data = BarChartData(dataSet: dataSet)
         barChartView.data = data
+    }
+    
+    func createBarChartFromData() {
+        weeklyData = [0,0,0,0,0,0,0]
+        barChartView.data?.clearValues()
+        dataEntries.removeAll()
+        
+        if !pSessions.isEmpty {
+            print("data in sessions")
+            fetchDataforChartEntries()
+            createDataEntries()
+            assignDataEntries()
+        } else {
+            barChartView.data = .none
+        }
+        barChartView.notifyDataSetChanged()
+        barChartView.frame = CGRect(x: 0, y: 0, width: sevenDayPracticeBarChartView.frame.width, height: sevenDayPracticeBarChartView.frame.height)
+        sevenDayPracticeBarChartView.addSubview(barChartView)
+        sevenDayPracticeBarChartView.clipsToBounds = true
+        barChartView.data?.setDrawValues(false)
+        barChartView.animate(xAxisDuration: 0.3)
+        barChartView.animate(yAxisDuration: 0.3)
     }
     
 }
