@@ -7,8 +7,9 @@
 
 import UIKit
 import Charts
+import MessageUI
 
-class AnalyticsViewController: UITableViewController, ChartViewDelegate {
+class AnalyticsViewController: UITableViewController, ChartViewDelegate, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var averageMinutesSevenDays: UILabel!
     @IBOutlet weak var ChartDateLabel: UILabel!
@@ -85,19 +86,20 @@ class AnalyticsViewController: UITableViewController, ChartViewDelegate {
     
     
     @IBAction func exportSevenDaySessionsButton(_ sender: UIButton) {
-        let CSVPath = createCSV()
+        createCSV()
+        
         
     }
 }
 
 //MARK: - Create & Share Data
 extension AnalyticsViewController {
-    func createCSV() -> NSURL? {
+    
+    func createCSV() {
         let fileName = "PastSevenDayHistory_\(Date()).csv"
         
-        /* CREAR UN ARCHIVO NUEVO EN EL DIRECTORIO PRINCIPAL */
         guard let path = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(fileName) as NSURL else {
-            return nil }
+            return  }
 
         var csvText = "date,minutes,major scale, minor scale, mainpiece, sight reading, improvisation, repertoire\n"
         
@@ -116,15 +118,28 @@ extension AnalyticsViewController {
             try csvText.write(to: path as URL, atomically: true, encoding: String.Encoding.utf8)
             print("Success in exporting csv file")
             print("File path: \(path)")
-            return path
+            let vc = UIActivityViewController(activityItems: [path], applicationActivities: [])
+                            vc.excludedActivityTypes = [
+                                UIActivity.ActivityType.assignToContact,
+                                UIActivity.ActivityType.saveToCameraRoll,
+                                UIActivity.ActivityType.postToFlickr,
+                                UIActivity.ActivityType.postToVimeo,
+                                UIActivity.ActivityType.postToTencentWeibo,
+                                UIActivity.ActivityType.postToTwitter,
+                                UIActivity.ActivityType.postToFacebook,
+                                UIActivity.ActivityType.openInIBooks
+                            ]
+            present(vc, animated: true, completion: nil)
+            
         } catch {
             print("Failed to create file")
             print("\(error)")
         } // catch
         
-        return nil
+        
+        
 
-    } // CreateCSV
+    }
 
 }
 
