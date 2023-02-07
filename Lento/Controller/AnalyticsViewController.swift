@@ -10,15 +10,18 @@ import Charts
 
 class AnalyticsViewController: UITableViewController, ChartViewDelegate {
 
+    @IBOutlet weak var averageMinutesSevenDays: UILabel!
     @IBOutlet weak var ChartDateLabel: UILabel!
     @IBOutlet weak var sevenDayPracticeBarChartView: UIView!
     lazy var barChartView: BarChartView = {
         let chartView = BarChartView()
-        chartView.backgroundColor = .systemGray
+        chartView.backgroundColor = .lightGray
         chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: days)
         chartView.rightAxis.enabled = false
         chartView.isUserInteractionEnabled = false
-        chartView.legend.enabled = false
+        chartView.legend.enabled = true
+        chartView.noDataText = "No Practice Data Available"
+        chartView.noDataFont = .boldSystemFont(ofSize: 14)
         
         //configure xAxis
         let xAxis = chartView.xAxis
@@ -58,15 +61,14 @@ class AnalyticsViewController: UITableViewController, ChartViewDelegate {
     }()
     
     var pSessions: [PracticeSession] = []
-    var dayIndexDictionary = [Int:Int]() //e.g day (15) : minutes (30)
+    var dayIndexDictionary = [Int:Int]() //e.g day (15) : index(5)
     var dataEntries = [ChartDataEntry]()
     var weeklyData: [Int16] = [0,0,0,0,0,0,0]
+    var sessionCount = 1
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,7 +77,55 @@ class AnalyticsViewController: UITableViewController, ChartViewDelegate {
         pSessions = CoreDataManager.shared.fetchSortedPracticeSessionsByDate()!
         print(pSessions.isEmpty)
         createBarChartFromData()
+        let weekMinutes = Int(weeklyData.reduce(0, +))
+        let average = weekMinutes / sessionCount
+        print(weeklyData)
+        averageMinutesSevenDays.text = "Average Session Time: \(average) minutes"
     }
+    
+    
+    @IBAction func exportSevenDaySessionsButton(_ sender: UIButton) {
+        let CSVPath = createCSV()
+        
+    }
+}
+
+//MARK: - Create & Share Data
+extension AnalyticsViewController {
+    func createCSV() -> NSURL? {
+        let fileName = "PastSevenDayHistory_\(Date()).csv"
+        
+        /* CREAR UN ARCHIVO NUEVO EN EL DIRECTORIO PRINCIPAL */
+        guard let path = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(fileName) as NSURL else {
+            return nil }
+
+        var csvText = "date,minutes,major scale, minor scale, mainpiece, sight reading, improvisation, repertoire\n"
+        
+        
+        
+        for p in pSessions {
+            if let date = p.sessionDate {
+                if dayIndexDictionary.keys.contains(convertDateToDayInteger(oldDate: date)) {
+                    let newLine = "\(String(describing: p.sessionDate!)),\(p.minutes),\(String(describing: p.majorScale!)),\(String(describing: p.minorScale!)),\(String(describing: p.mainPiece!)),\(String(describing: p.sightReading!)),\(String(describing: p.improvisation!)),\(String(describing: p.reportoire!))\n"
+                    csvText.append(newLine)
+                }
+            }
+        }
+
+        do {
+            try csvText.write(to: path as URL, atomically: true, encoding: String.Encoding.utf8)
+            print("Success in exporting csv file")
+            print("File path: \(path)")
+            return path
+        } catch {
+            print("Failed to create file")
+            print("\(error)")
+        } // catch
+        
+        return nil
+
+    } // CreateCSV
+
 }
 
 
@@ -86,10 +136,14 @@ extension AnalyticsViewController  {
         for (n,x) in getLastSevenDayInts().reversed().enumerated() {
             dayIndexDictionary[x] = n
         }
+        
+        sessionCount = 0
+        
         for p in pSessions {
             if let date = p.sessionDate {
                 if dayIndexDictionary.keys.contains(convertDateToDayInteger(oldDate: date)) {
                     weeklyData[dayIndexDictionary[convertDateToDayInteger(oldDate: date)]!] += p.minutes
+                    sessionCount += 1
                 }
             }
         }
@@ -101,13 +155,11 @@ extension AnalyticsViewController  {
             let entry = BarChartDataEntry(x: Double(index), y: Double(val))
             dataEntries.append(entry)
         }
-        
     }
-    
     
     func assignDataEntries() {
         print(dataEntries)
-        let dataSet = BarChartDataSet(entries: dataEntries)
+        let dataSet = BarChartDataSet(entries: dataEntries, label: "Minutes")
         dataSet.setColor(NSUIColor(red: 15.0/255.0, green: 100.0/255.0, blue: 50/255.0, alpha: 1.0))
         let data = BarChartData(dataSet: dataSet)
         barChartView.data = data
@@ -131,8 +183,8 @@ extension AnalyticsViewController  {
         sevenDayPracticeBarChartView.addSubview(barChartView)
         sevenDayPracticeBarChartView.clipsToBounds = true
         barChartView.data?.setDrawValues(false)
-        barChartView.animate(xAxisDuration: 0.3)
-        barChartView.animate(yAxisDuration: 0.3)
+        barChartView.animate(xAxisDuration: 0.1)
+        barChartView.animate(yAxisDuration: 0.1)
     }
     
 }

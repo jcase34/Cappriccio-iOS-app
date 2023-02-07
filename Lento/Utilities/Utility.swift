@@ -66,7 +66,7 @@ func formatSectionDate(oldDate: Date) -> Date? {
 
 func formatSessionDate(oldDate: Date) -> Date? {
     let calendar = Calendar.current
-    let components = calendar.dateComponents([.day, .month, .year], from: oldDate)
+    let components = calendar.dateComponents([.minute, .day, .month, .year], from: oldDate)
     let date = calendar.date(from: components)
     return date
 }
