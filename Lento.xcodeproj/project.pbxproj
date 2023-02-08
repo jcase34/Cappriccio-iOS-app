@@ -28,6 +28,7 @@
 		868C25AC2978D0B000A1C6B1 /* LentoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C25AB2978D0B000A1C6B1 /* LentoTests.swift */; };
 		86B8F81F29805EED00033E25 /* PracticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8F81E29805EED00033E25 /* PracticeTableViewCell.swift */; };
 		86D45DCA297B5FAC008CE847 /* SessionStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D45DC9297B5FAC008CE847 /* SessionStatsView.swift */; };
+		86EE75E32994248700BE84DE /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EE75E22994248700BE84DE /* MainTabBarController.swift */; };
 		86F63C54296DE79F003B1D2F /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F63C53296DE79F003B1D2F /* Utility.swift */; };
 		86FA4B92296F3394008FA4DE /* SessionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA4B91296F3394008FA4DE /* SessionDetailViewController.swift */; };
 		86FF1B9829708DB0001240EA /* SightReading+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FF1B9029708DB0001240EA /* SightReading+CoreDataClass.swift */; };
@@ -77,6 +78,7 @@
 		868C25AB2978D0B000A1C6B1 /* LentoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LentoTests.swift; sourceTree = "<group>"; };
 		86B8F81E29805EED00033E25 /* PracticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeTableViewCell.swift; sourceTree = "<group>"; };
 		86D45DC9297B5FAC008CE847 /* SessionStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStatsView.swift; sourceTree = "<group>"; };
+		86EE75E22994248700BE84DE /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		86F63C53296DE79F003B1D2F /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		86F63C63296E2139003B1D2F /* Reference.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Reference.md; sourceTree = "<group>"; };
 		86FA4B91296F3394008FA4DE /* SessionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				8642A44E296B7B0900A91D45 /* ItemDetailViewController.swift */,
 				86FA4B91296F3394008FA4DE /* SessionDetailViewController.swift */,
 				8685729E297F03A000185CDA /* AnalyticsViewController.swift */,
+				86EE75E22994248700BE84DE /* MainTabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				86FA4B92296F3394008FA4DE /* SessionDetailViewController.swift in Sources */,
 				86FF1B9D29708DB0001240EA /* Improvisation+CoreDataProperties.swift in Sources */,
 				8642A43B296B5E9000A91D45 /* SceneDelegate.swift in Sources */,
+				86EE75E32994248700BE84DE /* MainTabBarController.swift in Sources */,
 				86FF1B9929708DB0001240EA /* SightReading+CoreDataProperties.swift in Sources */,
 				865AA097297D09D10089C971 /* PracticeSession+CoreDataProperties.swift in Sources */,
 				8613290429765CFC004DFF87 /* MainHeaderView.swift in Sources */,

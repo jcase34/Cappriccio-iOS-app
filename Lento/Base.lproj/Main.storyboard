@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -76,7 +75,7 @@
             </objects>
             <point key="canvasLocation" x="4726" y="-1005"/>
         </scene>
-        <!--Lento-->
+        <!--Cappriccio-->
         <scene sceneID="rZH-QZ-A2d">
             <objects>
                 <viewController id="X5h-sg-Smw" customClass="HomeViewController" customModule="Lento" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,7 +114,7 @@
                             <constraint firstItem="fgC-Yp-39R" firstAttribute="trailing" secondItem="Te2-kQ-K8A" secondAttribute="trailing" id="pzY-ny-O64"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Lento" id="7Mk-D6-dWz">
+                    <navigationItem key="navigationItem" title="Cappriccio" id="7Mk-D6-dWz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8fJ-Yc-WD9">
                             <connections>
                                 <segue destination="FgM-ID-TvA" kind="show" identifier="AddItem" id="cd7-uq-Tny"/>
@@ -132,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="4725.6000000000004" y="-296.40179910044981"/>
         </scene>
-        <!--Stats-->
+        <!--Cappriccio-->
         <scene sceneID="4su-1D-UEF">
             <objects>
                 <tableViewController id="UAV-NQ-KM1" customClass="AnalyticsViewController" customModule="Lento" customModuleProvider="target" sceneMemberID="viewController">
@@ -227,7 +226,7 @@
                             <outlet property="delegate" destination="UAV-NQ-KM1" id="4uN-gx-8Cz"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Stats" image="chart.bar.xaxis" catalog="system" id="Jdu-Mz-9Py"/>
+                    <navigationItem key="navigationItem" title="Cappriccio" id="ioF-fT-yap"/>
                     <connections>
                         <outlet property="averageMinutesSevenDays" destination="uDv-C7-9ut" id="ufW-0V-L0c"/>
                         <outlet property="sevenDayPracticeBarChartView" destination="QeT-sm-FoN" id="2AV-6I-8ik"/>
@@ -235,9 +234,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3wO-hg-rcR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4725.6000000000004" y="398.95052473763121"/>
+            <point key="canvasLocation" x="5534" y="436"/>
         </scene>
-        <!--Info-->
+        <!--Cappriccio-->
         <scene sceneID="GZJ-GU-IFS">
             <objects>
                 <tableViewController id="uhh-Vc-6gL" sceneMemberID="viewController">
@@ -263,7 +262,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNQ-rH-xs9">
-                                                    <rect key="frame" x="130" y="32.5" width="115" height="17.5"/>
+                                                    <rect key="frame" x="130" y="32.5" width="115" height="17"/>
                                                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -299,11 +298,11 @@
                             <outlet property="delegate" destination="uhh-Vc-6gL" id="etm-OI-xKz"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Info" image="questionmark.circle" catalog="system" id="BFI-dH-mRz"/>
+                    <navigationItem key="navigationItem" title="Cappriccio" id="e06-jO-gOe"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dbx-Dh-snx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4725.6000000000004" y="1100.5997001499252"/>
+            <point key="canvasLocation" x="5534" y="1194"/>
         </scene>
         <!--Add Session-->
         <scene sceneID="TfH-wT-bPv">
@@ -382,19 +381,19 @@
                             <tableViewSection headerTitle="Scale" id="IRS-SC-eG7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" tag="10" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" id="kR6-jL-Z3J">
-                                        <rect key="frame" x="16" y="251.5" width="343" height="43.5"/>
+                                        <rect key="frame" x="16" y="251.5" width="343" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kR6-jL-Z3J" id="n71-VD-YLh">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Major Scale" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LrQ-S2-nC2" userLabel="Major Scale text field">
-                                                    <rect key="frame" x="48.5" y="0.0" width="294.5" height="43.5"/>
+                                                    <rect key="frame" x="48.5" y="0.0" width="294.5" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Bi-XZ-wHR">
-                                                    <rect key="frame" x="16" y="11" width="8.5" height="21.5"/>
+                                                    <rect key="frame" x="16" y="11" width="8.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -412,14 +411,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" tag="11" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" id="Rdb-XJ-OH8">
-                                        <rect key="frame" x="16" y="295" width="343" height="43.5"/>
+                                        <rect key="frame" x="16" y="294.5" width="343" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rdb-XJ-OH8" id="VTy-ye-bqL">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♭" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWF-lc-xPR">
-                                                    <rect key="frame" x="16" y="11" width="9" height="21.5"/>
+                                                    <rect key="frame" x="16" y="11" width="9" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="9" id="3ra-W7-64a"/>
                                                     </constraints>
@@ -428,7 +427,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" tag="21" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Minor Scale" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KmW-6a-4T3" userLabel="Minor Scale text field">
-                                                    <rect key="frame" x="49" y="0.0" width="294" height="43.5"/>
+                                                    <rect key="frame" x="49" y="0.0" width="294" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -449,19 +448,19 @@
                             <tableViewSection headerTitle="Main Piece" id="qiv-6I-3T9">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" tag="12" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="0.0" id="gH9-Ng-KvU">
-                                        <rect key="frame" x="16" y="394.5" width="343" height="43.5"/>
+                                        <rect key="frame" x="16" y="393.5" width="343" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gH9-Ng-KvU" id="8Zo-S3-uYd">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Main Piece" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dxd-un-oBF" userLabel="Main Piece Text Field">
-                                                    <rect key="frame" x="49" y="0.0" width="294" height="43.5"/>
+                                                    <rect key="frame" x="49" y="0.0" width="294" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🎼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0i-Ao-c7l">
-                                                    <rect key="frame" x="16" y="11" width="23" height="21.5"/>
+                                                    <rect key="frame" x="16" y="11" width="23" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -483,20 +482,20 @@
                             <tableViewSection headerTitle="Sight Reading" id="au7-Qt-T08">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" tag="13" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="B74-uF-xaU">
-                                        <rect key="frame" x="16" y="494" width="343" height="43.5"/>
+                                        <rect key="frame" x="16" y="492.5" width="343" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B74-uF-xaU" id="yiL-0w-yIs">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEC-j6-4ec">
-                                                    <rect key="frame" x="16" y="11" width="23" height="21.5"/>
+                                                    <rect key="frame" x="16" y="11" width="23" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Sight Reading" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sqi-AJ-Skl" userLabel="Sight Reading Text Field">
-                                                    <rect key="frame" x="49" y="0.0" width="294" height="43.5"/>
+                                                    <rect key="frame" x="49" y="0.0" width="294" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -518,19 +517,19 @@
                             <tableViewSection headerTitle="Improvisation" id="8qu-OV-sTl">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" tag="14" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="jz4-vf-ORW">
-                                        <rect key="frame" x="16" y="593.5" width="343" height="43.5"/>
+                                        <rect key="frame" x="16" y="591.5" width="343" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jz4-vf-ORW" id="gyC-P5-pjj">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Improvisation" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0CQ-Rl-OhW" userLabel="Improvisation Text Field">
-                                                    <rect key="frame" x="49" y="0.0" width="294" height="43.5"/>
+                                                    <rect key="frame" x="49" y="0.0" width="294" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🎶" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iy7-Sj-KQz">
-                                                    <rect key="frame" x="16" y="11" width="23" height="21.5"/>
+                                                    <rect key="frame" x="16" y="11" width="23" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -552,19 +551,19 @@
                             <tableViewSection headerTitle="Repertoire" id="cXZ-8l-e6A">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" tag="15" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="ZRP-HR-RQV">
-                                        <rect key="frame" x="16" y="693" width="343" height="43.5"/>
+                                        <rect key="frame" x="16" y="690.5" width="343" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZRP-HR-RQV" id="OGG-lO-zey">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Repertoire" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wll-V6-tb7" userLabel="Reportoire Text Field">
-                                                    <rect key="frame" x="49" y="0.0" width="294" height="43.5"/>
+                                                    <rect key="frame" x="49" y="0.0" width="294" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🗄️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etU-it-Ulu">
-                                                    <rect key="frame" x="16" y="11" width="23" height="21.5"/>
+                                                    <rect key="frame" x="16" y="11" width="23" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -674,10 +673,10 @@
             </objects>
             <point key="canvasLocation" x="3898.4000000000001" y="-296.40179910044981"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="vBY-dU-UVd">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="U4K-bZ-1pI" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="U4K-bZ-1pI" customClass="MainTabBarController" customModule="Lento" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fam-ne-0A2">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -686,13 +685,51 @@
                     </tabBar>
                     <connections>
                         <segue destination="Cdw-Ro-tj8" kind="relationship" relationship="viewControllers" id="JBq-LI-iTM"/>
-                        <segue destination="UAV-NQ-KM1" kind="relationship" relationship="viewControllers" id="9bd-H2-2Fk"/>
-                        <segue destination="uhh-Vc-6gL" kind="relationship" relationship="viewControllers" id="6hQ-Ie-Sce"/>
+                        <segue destination="J6z-mt-BB1" kind="relationship" relationship="viewControllers" id="9bd-H2-2Fk"/>
+                        <segue destination="eb5-EW-Kac" kind="relationship" relationship="viewControllers" id="6hQ-Ie-Sce"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1k-fD-xth" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3006" y="-296"/>
+            <point key="canvasLocation" x="2876" y="399"/>
+        </scene>
+        <!--Stats-->
+        <scene sceneID="9kT-Hk-8cX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J6z-mt-BB1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stats" image="chart.bar.xaxis" catalog="system" id="Jdu-Mz-9Py"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8BR-Yv-USm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UAV-NQ-KM1" kind="relationship" relationship="rootViewController" id="Zbq-Eg-0vJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PzV-QS-A9T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4726" y="436"/>
+        </scene>
+        <!--Info-->
+        <scene sceneID="kRy-kH-NNa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eb5-EW-Kac" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Info" image="questionmark.circle" catalog="system" id="BFI-dH-mRz"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sv4-KI-CyQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uhh-Vc-6gL" kind="relationship" relationship="rootViewController" id="BBh-ex-33d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yv9-oP-DGB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4726" y="1195"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
