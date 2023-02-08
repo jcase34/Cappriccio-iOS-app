@@ -1,8 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "lentoicon.png",
+      "filename" : "App Icons - App Store@2x.png",
       "idiom" : "universal",
+      "language-direction" : "left-to-right",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    },
+    {
+      "filename" : "App Icons - App Store@2x 1.png",
+      "idiom" : "universal",
+      "language-direction" : "right-to-left",
       "platform" : "ios",
       "size" : "1024x1024"
     }
