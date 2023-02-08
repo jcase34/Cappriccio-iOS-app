@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Lento.xcodeproj">
+      location = "group:/Users/jacobcase/Documents/Projects/Workspace/Lento/Lento.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
