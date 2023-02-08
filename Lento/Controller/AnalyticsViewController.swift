@@ -86,19 +86,18 @@ class AnalyticsViewController: UITableViewController, ChartViewDelegate, MFMailC
     
     
     @IBAction func exportSevenDaySessionsButton(_ sender: UIButton) {
-        createCSV()
-        
-        
+        createAndExportCSV()
+        //deleteFileInCache()
     }
 }
 
 //MARK: - Create & Share Data
 extension AnalyticsViewController {
     
-    func createCSV() {
-        let fileName = "PastSevenDayHistory_\(Date()).csv"
+    func createAndExportCSV() {
+        let fileName = "PastSevenDayHistory.csv"
         
-        guard let path = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(fileName) as NSURL else {
+        guard let path = try? FileManager.default.url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(fileName) as NSURL else {
             return  }
 
         var csvText = "date,minutes,major scale, minor scale, mainpiece, sight reading, improvisation, repertoire\n"
@@ -113,7 +112,8 @@ extension AnalyticsViewController {
                 }
             }
         }
-
+        
+        //write to text file & send
         do {
             try csvText.write(to: path as URL, atomically: true, encoding: String.Encoding.utf8)
             print("Success in exporting csv file")
@@ -134,11 +134,33 @@ extension AnalyticsViewController {
         } catch {
             print("Failed to create file")
             print("\(error)")
-        } // catch
+        }
+    }
+    
+    func deleteFileInCache() {
         
-        
-        
-
+        let fileManager = FileManager.default
+        let documentsUrl =  FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first! as NSURL
+        let documentsPath = documentsUrl.path
+        do {
+            if let documentPath = documentsPath
+            {
+                let fileNames = try fileManager.contentsOfDirectory(atPath: "\(documentPath)")
+                print("all files in cache: \(fileNames)")
+                for fileName in fileNames {
+                    print(fileName)
+                    // delete file
+                    do {
+                        try FileManager.default.removeItem(atPath: fileName)
+                        print("success deleting file")
+                    } catch {
+                        print("Could not delete file, probably read-only filesystem")
+                    }
+                }
+            }
+        } catch {
+            print(error)
+        }
     }
 
 }

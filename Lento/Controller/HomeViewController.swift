@@ -65,6 +65,7 @@ class HomeViewController: UIViewController {
         updateTableHeaderView()
         tableView.tableHeaderView = mainHeaderView
         
+        
 //        tableView.register(PracticeSessionTableViewCell.self, forCellReuseIdentifier: PracticeSessionTableViewCell.identifier)
         
         let cellNib = UINib(nibName: "PracticeTableViewCell", bundle: nil)
