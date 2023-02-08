@@ -29,8 +29,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lento Version 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJ3-d4-pSn">
-                                                    <rect key="frame" x="125" y="12.5" width="125" height="19"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cappriccio Version 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJ3-d4-pSn">
+                                                    <rect key="frame" x="107.5" y="12.5" width="160.5" height="19"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -49,8 +49,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Lento 2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7f-H8-i0M">
-                                                    <rect key="frame" x="139" y="12.5" width="97" height="19"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Cappriccio 2023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7f-H8-i0M">
+                                                    <rect key="frame" x="121.5" y="12.5" width="132" height="19"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                     <nil key="highlightedColor"/>
