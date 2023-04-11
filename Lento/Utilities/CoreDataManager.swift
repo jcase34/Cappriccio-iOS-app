@@ -62,11 +62,24 @@ class CoreDataManager {
         
     }
     
-    func updatePracticeSession() {
+    func updatePracticeSession(sectionDate: Date, sessionDate: Date, minutes: Int16, majorScale: String, minorScale: String, mainPiece: String, sightReading: String, improvisation: String, repertoire: String, practiceSession: PracticeSession) {
+        
+        var thisSession = practiceSession
+        thisSession.sectionDate = sectionDate
+        thisSession.sessionDate = sessionDate
+        thisSession.minutes = minutes
+        thisSession.majorScale = majorScale
+        thisSession.minorScale = minorScale
+        thisSession.mainPiece = mainPiece
+        thisSession.sightReading = sightReading
+        thisSession.improvisation = improvisation
+        thisSession.reportoire = repertoire
+        
+        self.saveContext()
         
     }
     
-    func insertPracticeSession(sectionDate: Date, sessionDate: Date, minutes: Int16, majorScale: String, minorScale: String, mainPiece: String, sightReading: String, improvisation: String, repertoire: String) {
+    func insertPracticeSession(sectionDate: Date, sessionDate: Date, minutes: Int16, majorScale: String, minorScale: String, mainPiece: String, sightReading: String, improvisation: String, repertoire: String) -> PracticeSession? {
         
         let newSession = PracticeSession(context: self.managedContext)
         
@@ -81,6 +94,8 @@ class CoreDataManager {
         newSession.reportoire = repertoire
         
         self.saveContext()
+        
+        return newSession
             
     }
     
