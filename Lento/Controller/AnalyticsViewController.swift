@@ -75,7 +75,7 @@ class AnalyticsViewController: UITableViewController, ChartViewDelegate, MFMailC
     override func viewWillAppear(_ animated: Bool) {
         print("refresh chart")
         //fetch all sessions and organize by date. Later fix with a fetch limit up to 20 or so
-        pSessions = CoreDataManager.shared.fetchSortedPracticeSessionsByDate()!
+        //pSessions = CoreDataManager.shared.fetchSortedPracticeSessionsByDate()!
         print(pSessions.isEmpty)
         createBarChartFromData()
         let weekMinutes = Int(weeklyData.reduce(0, +))

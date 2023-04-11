@@ -117,17 +117,17 @@ extension ItemDetailViewController {
             guard let sectionDate = formatSectionDate(oldDate: datePicker.date) else {return}
             guard let sessionDate = formatSessionDate(oldDate: datePicker.date) else {return}
             
-            CoreDataManager.shared.updatePracticeSession(
-                sectionDate: sectionDate,
-                sessionDate: sessionDate,
-                minutes: Int16(minutePicker.selectedRow(inComponent: 0)),
-                majorScale: majorScaleTextField.text!,
-                minorScale: minorScaleTextField.text!,
-                mainPiece: mainPieceTextField.text!,
-                sightReading: sightReadingTextField.text!,
-                improvisation: improvisationTextField.text!,
-                repertoire: repertoireTextField.text!,
-                practiceSession: pSession)
+//            CoreDataManager.shared.updatePracticeSession(
+//                sectionDate: sectionDate,
+//                sessionDate: sessionDate,
+//                minutes: Int16(minutePicker.selectedRow(inComponent: 0)),
+//                majorScale: majorScaleTextField.text!,
+//                minorScale: minorScaleTextField.text!,
+//                mainPiece: mainPieceTextField.text!,
+//                sightReading: sightReadingTextField.text!,
+//                improvisation: improvisationTextField.text!,
+//                repertoire: repertoireTextField.text!,
+//                practiceSession: pSession)
             
             delegate?.ItemDetailViewController(self, didFinishEditingSession: pSession)
         } else {
@@ -136,17 +136,17 @@ extension ItemDetailViewController {
             guard let sectionDate = formatSectionDate(oldDate: datePicker.date) else {return}
             guard let sessionDate = formatSessionDate(oldDate: datePicker.date) else {return}
             
-            let pSession = CoreDataManager.shared.insertPracticeSession(
-                sectionDate: sectionDate,
-                sessionDate: sessionDate,
-                minutes: Int16(minutePicker.selectedRow(inComponent: 0)),
-                majorScale: majorScaleTextField.text?.isEmpty == true ? "None" : majorScaleTextField.text!,
-                minorScale: minorScaleTextField.text?.isEmpty == true ? "None" : minorScaleTextField.text!,
-                mainPiece: mainPieceTextField.text?.isEmpty == true ? "None" : mainPieceTextField.text!,
-                sightReading: sightReadingTextField.text?.isEmpty == true ? "None" : sightReadingTextField.text!,
-                improvisation: improvisationTextField.text?.isEmpty == true ? "None" : improvisationTextField.text!,
-                repertoire: repertoireTextField.text?.isEmpty == true ? "None" : repertoireTextField.text!)!
-            delegate?.ItemDetailViewController(self, didFinishAddingSession: pSession)
+//            let pSession = CoreDataManager.shared.insertPracticeSession(
+//                sectionDate: sectionDate,
+//                sessionDate: sessionDate,
+//                minutes: Int16(minutePicker.selectedRow(inComponent: 0)),
+//                majorScale: majorScaleTextField.text?.isEmpty == true ? "None" : majorScaleTextField.text!,
+//                minorScale: minorScaleTextField.text?.isEmpty == true ? "None" : minorScaleTextField.text!,
+//                mainPiece: mainPieceTextField.text?.isEmpty == true ? "None" : mainPieceTextField.text!,
+//                sightReading: sightReadingTextField.text?.isEmpty == true ? "None" : sightReadingTextField.text!,
+//                improvisation: improvisationTextField.text?.isEmpty == true ? "None" : improvisationTextField.text!,
+//                repertoire: repertoireTextField.text?.isEmpty == true ? "None" : repertoireTextField.text!)!
+//            delegate?.ItemDetailViewController(self, didFinishAddingSession: pSession)
         }
     }
 }

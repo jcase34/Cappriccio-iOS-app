@@ -45,7 +45,7 @@ class SessionDetailViewController: UITableViewController {
         //print("getting items")
         if let tagNumber = tagNumber {
             if tagNumber > 11 {
-                getSessionItems()
+                //getSessionItems()
                 configureNavBarFromTagNumber(tagNumber)
             } else {
                 return
@@ -78,7 +78,7 @@ extension SessionDetailViewController {
                   let itemToSave = textField.text else {return}
             
             self.sItem = itemToSave
-            self.saveSessionItems()
+            //self.saveSessionItems()
             self.tableView.reloadData()
           }
           let cancelAction = UIAlertAction(title: "Cancel",
@@ -185,7 +185,7 @@ extension SessionDetailViewController {
 
         let sessionItemToDelete = sessionItems[indexPath.row]
         //managedContext.delete(sessionItemToDelete)
-        CoreDataManager.shared.deleteSessionItem(itemToDelete: sessionItemToDelete)
+        //CoreDataManager.shared.deleteSessionItem(itemToDelete: sessionItemToDelete)
         sessionItems.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
@@ -194,48 +194,48 @@ extension SessionDetailViewController {
 //MARK: - Core Data Methods
 extension SessionDetailViewController {
 
-    func getSessionItems() {
-        
-        var entityName: String = ""
-        
-        switch tagNumber {
-        case SessionItem.mainPiece.rawValue:
-            entityName = Entities.mainPiece.rawValue
-        case SessionItem.sightReading.rawValue:
-            entityName = Entities.sightReading.rawValue
-        case SessionItem.improvisation.rawValue:
-            entityName = Entities.improvisation.rawValue
-        case SessionItem.reportoire.rawValue:
-            entityName = Entities.reportoire.rawValue
-        default:
-            break
-        }
-
-        sessionItems = CoreDataManager.shared.fetchSessionItems(entityName: entityName)
-    }
+//    func getSessionItems() {
+//
+//        var entityName: String = ""
+//
+//        switch tagNumber {
+//        case SessionItem.mainPiece.rawValue:
+//            entityName = Entities.mainPiece.rawValue
+//        case SessionItem.sightReading.rawValue:
+//            entityName = Entities.sightReading.rawValue
+//        case SessionItem.improvisation.rawValue:
+//            entityName = Entities.improvisation.rawValue
+//        case SessionItem.reportoire.rawValue:
+//            entityName = Entities.reportoire.rawValue
+//        default:
+//            break
+//        }
+//
+//        sessionItems = CoreDataManager.shared.fetchSessionItems(entityName: entityName)
+//    }
     
-    func saveSessionItems() {
-        switch tagNumber {
-        case SessionItem.mainPiece.rawValue:
-            let mPiece = CoreDataManager.shared.insertMainPiece(mainPiece: sItem)!
-            sessionItems.append(mPiece)
-            
-        case SessionItem.sightReading.rawValue:
-            let sReading = CoreDataManager.shared.insertSightReading(sightReading: sItem)!
-            sessionItems.append(sReading)
-            
-        case SessionItem.improvisation.rawValue:
-            let improv = CoreDataManager.shared.insertImprovsation(improvsation: sItem)!
-            sessionItems.append(improv)
-            
-        case SessionItem.reportoire.rawValue:
-            let repert = CoreDataManager.shared.insertRepertoire(repertoire: sItem)!
-            sessionItems.append(repert)
-            
-        default:
-            break
-        }
-        
-    }
+//    func saveSessionItems() {
+//        switch tagNumber {
+//        case SessionItem.mainPiece.rawValue:
+//            let mPiece = CoreDataManager.shared.insertMainPiece(mainPiece: sItem)!
+//            sessionItems.append(mPiece)
+//
+//        case SessionItem.sightReading.rawValue:
+//            let sReading = CoreDataManager.shared.insertSightReading(sightReading: sItem)!
+//            sessionItems.append(sReading)
+//
+//        case SessionItem.improvisation.rawValue:
+//            let improv = CoreDataManager.shared.insertImprovsation(improvsation: sItem)!
+//            sessionItems.append(improv)
+//
+//        case SessionItem.reportoire.rawValue:
+//            let repert = CoreDataManager.shared.insertRepertoire(repertoire: sItem)!
+//            sessionItems.append(repert)
+//
+//        default:
+//            break
+//        }
+//
+//    }
 }
 
