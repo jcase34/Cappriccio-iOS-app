@@ -195,9 +195,9 @@ extension SessionDetailViewController {
 extension SessionDetailViewController {
 
     func getSessionItems() {
-        
+
         var entityName: String = ""
-        
+
         switch tagNumber {
         case SessionItem.mainPiece.rawValue:
             entityName = Entities.mainPiece.rawValue
@@ -219,23 +219,23 @@ extension SessionDetailViewController {
         case SessionItem.mainPiece.rawValue:
             let mPiece = CoreDataManager.shared.insertMainPiece(mainPiece: sItem)!
             sessionItems.append(mPiece)
-            
+
         case SessionItem.sightReading.rawValue:
             let sReading = CoreDataManager.shared.insertSightReading(sightReading: sItem)!
             sessionItems.append(sReading)
-            
+
         case SessionItem.improvisation.rawValue:
             let improv = CoreDataManager.shared.insertImprovsation(improvsation: sItem)!
             sessionItems.append(improv)
-            
+
         case SessionItem.reportoire.rawValue:
             let repert = CoreDataManager.shared.insertRepertoire(repertoire: sItem)!
             sessionItems.append(repert)
-            
+
         default:
             break
         }
-        
+
     }
 }
 
