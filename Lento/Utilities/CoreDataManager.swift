@@ -46,25 +46,41 @@ class CoreDataManager {
     }
     
     
-    func insertMainPiece(mainPiece: String) {
+    func insertMainPiece(mainPiece: String) -> NSManagedObject? {
+        let newPiece = NSEntityDescription.insertNewObject(forEntityName: Entities.mainPiece.rawValue, into: managedContext) as! MainPiece
+        newPiece.mainPiece = mainPiece
+        saveContext()
         
+        return newPiece
     }
     
-    func insertSightReading(sightReading: String) {
+    func insertSightReading(sightReading: String) -> NSManagedObject? {
+        let sReading = NSEntityDescription.insertNewObject(forEntityName: Entities.sightReading.rawValue, into: managedContext) as! SightReading
+        sReading.sightReading = sightReading
+        saveContext()
         
+        return sReading
     }
     
-    func insertImprovsation(improvsation: String) {
+    func insertImprovsation(improvsation: String) -> NSManagedObject? {
+        let improv = NSEntityDescription.insertNewObject(forEntityName: Entities.improvisation.rawValue, into: managedContext) as! Improvisation
+        improv.improvisation = improvsation
+        saveContext()
         
+        return improv
     }
     
-    func insertRepertoire(repertoire: String) {
+    func insertRepertoire(repertoire: String) -> NSManagedObject? {
+        let repert = NSEntityDescription.insertNewObject(forEntityName: Entities.reportoire.rawValue, into: managedContext) as! Repertoire
+        repert.repertoire = repertoire
+        saveContext()
         
+        return repert
     }
     
     func updatePracticeSession(sectionDate: Date, sessionDate: Date, minutes: Int16, majorScale: String, minorScale: String, mainPiece: String, sightReading: String, improvisation: String, repertoire: String, practiceSession: PracticeSession) {
         
-        var thisSession = practiceSession
+        let thisSession = practiceSession
         thisSession.sectionDate = sectionDate
         thisSession.sessionDate = sessionDate
         thisSession.minutes = minutes
@@ -99,22 +115,50 @@ class CoreDataManager {
             
     }
     
-    func fetchSessionItems() {
-        
-    }
     
-    func deleteSessionItem() {
-        
+    func deleteSessionItem(itemToDelete: NSManagedObject) {
+        managedContext.delete(itemToDelete)
+        saveContext()
     }
     
     func deletePracticeSession(practiceSession: PracticeSession) {
-        
+        managedContext.delete(practiceSession)
+        saveContext()
     }
     
-//    func fetchSortedPracticeSessionsByDate() -> [PracticeSession] {
-//        
-//        //return
-//    }
+    func fetchSessionItems(entityName: String) -> [NSManagedObject] {
+        var items = [NSManagedObject]()
+        let request = NSFetchRequest<NSManagedObject>()
+        let entity = NSEntityDescription.entity(forEntityName: entityName, in: managedContext)
+        request.entity = entity
+        
+        do {
+            items = try managedContext.fetch(request)
+        } catch let error as NSError {
+            print("error fetching session items \(error)")
+        }
+        
+        return items
+    }
+
+
+    func fetchSortedPracticeSessionsByDate() -> [PracticeSession]? {
+        var pSessions = [PracticeSession]()
+        
+        let fetchRequest = NSFetchRequest<PracticeSession>()
+        let entity = NSEntityDescription.entity(forEntityName: K.practiceSession, in: managedContext)
+        let dateSort = NSSortDescriptor(key: #keyPath(PracticeSession.sessionDate), ascending: true)
+        fetchRequest.entity = entity
+        fetchRequest.sortDescriptors = [dateSort]
+        
+        do {
+            pSessions = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("error fetching sorted sessions")
+        }
+        
+        return pSessions
+    }
     
     func fetchTotalPracticeSessiondMinutes() -> Int16{
         var totalMinutes: Int16 = 0
@@ -138,18 +182,19 @@ class CoreDataManager {
     }
     
     func fetchTotalPracticeSessionCount() -> Int {
+        var sessionCount: Int = 0
         
-        var pSessions: [PracticeSession] = []
-        
-        let fetchRequest = NSFetchRequest<PracticeSession>(entityName: K.practiceSession)
+        let fetchRequest = NSFetchRequest<NSNumber>(entityName: K.practiceSession)
+        fetchRequest.resultType = .countResultType
         
         do {
-            pSessions = try managedContext.fetch(fetchRequest)
+            let countResult = try managedContext.fetch(fetchRequest)
+            sessionCount = countResult.first!.intValue
         } catch let error as NSError {
             print("Could not fetch sessions. \(error), \(error.userInfo) ")
         }
         
-        return pSessions.count
+        return sessionCount
     }
     
 }
