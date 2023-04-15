@@ -16,11 +16,11 @@ class AnalyticsViewController: UITableViewController, ChartViewDelegate, MFMailC
     @IBOutlet weak var sevenDayPracticeBarChartView: UIView!
     lazy var barChartView: BarChartView = {
         let chartView = BarChartView()
-        chartView.backgroundColor = .lightGray
+        chartView.backgroundColor = UIColor(named: "ChartBG")
         chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: days)
         chartView.rightAxis.enabled = false
         chartView.isUserInteractionEnabled = false
-        chartView.legend.enabled = true
+        chartView.legend.enabled = false
         chartView.noDataText = "No Practice Data Available"
         chartView.noDataFont = .boldSystemFont(ofSize: 14)
         
@@ -184,7 +184,7 @@ extension AnalyticsViewController  {
                 }
             }
         }
-//        print("Weekly data contains days:minutes: \(weeklyData)")
+        print("Weekly data contains days:minutes: \(weeklyData)")
     }
     
     func createDataEntries() {
@@ -195,10 +195,35 @@ extension AnalyticsViewController  {
     }
     
     func assignDataEntries() {
+        print("colorizing entries")
         print(dataEntries)
-        let dataSet = BarChartDataSet(entries: dataEntries, label: "Minutes")
-        dataSet.setColor(NSUIColor(red: 15.0/255.0, green: 100.0/255.0, blue: 50/255.0, alpha: 1.0))
-        let data = BarChartData(dataSet: dataSet)
+        
+        
+//        let dataSet = BarChartDataSet(entries: dataEntries, label: "Minutes")
+//        dataSet.setColor(NSUIColor(red: 15.0/255.0, green: 100.0/255.0, blue: 50/255.0, alpha: 0.5))
+        
+        let day0 = BarChartDataSet(entries: [dataEntries[0]], label: "Minutes")
+        day0.setColor(UIColor(named: "GreenBarDark")!)
+        
+        let day1 = BarChartDataSet(entries: [dataEntries[1]], label: "Minutes")
+        day1.setColor(UIColor(named: "GreenBarLight")!)
+        
+        let day2 = BarChartDataSet(entries: [dataEntries[2]], label: "Minutes")
+        day2.setColor(UIColor(named: "GreenBarDark")!)
+        
+        let day3 = BarChartDataSet(entries: [dataEntries[3]], label: "Minutes")
+        day3.setColor(UIColor(named: "GreenBarLight")!)
+        
+        let day4 = BarChartDataSet(entries: [dataEntries[4]], label: "Minutes")
+        day4.setColor(UIColor(named: "GreenBarDark")!)
+        
+        let day5 = BarChartDataSet(entries: [dataEntries[5]], label: "Minutes")
+        day5.setColor(UIColor(named: "GreenBarLight")!)
+        
+        let day6 = BarChartDataSet(entries: [dataEntries[6]], label: "Minutes")
+        day6.setColor(UIColor(named: "GreenBarDark")!)
+        
+        let data: BarChartData = [day0, day1, day2, day3, day4, day5, day6]
         barChartView.data = data
     }
     

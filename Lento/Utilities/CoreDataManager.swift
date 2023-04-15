@@ -154,7 +154,7 @@ class CoreDataManager {
         do {
             pSessions = try managedContext.fetch(fetchRequest)
         } catch let error as NSError {
-            print("error fetching sorted sessions")
+            print("error fetching sorted sessions \(error)")
         }
         
         return pSessions
