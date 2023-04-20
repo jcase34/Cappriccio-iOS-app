@@ -66,6 +66,7 @@ class AnalyticsViewController: UITableViewController, ChartViewDelegate, MFMailC
     var dataEntries = [ChartDataEntry]()
     var weeklyData: [Int16] = [0,0,0,0,0,0,0]
     var sessionCount = 1
+    var dataInLastSevenDays = false
     
     
     override func viewDidLoad() {
@@ -76,9 +77,12 @@ class AnalyticsViewController: UITableViewController, ChartViewDelegate, MFMailC
         print("refresh chart")
         //fetch all sessions and organize by date. Later fix with a fetch limit up to 20 or so
         pSessions = CoreDataManager.shared.fetchSortedPracticeSessionsByDate()!
+        print(pSessions)
         print(pSessions.isEmpty)
         createBarChartFromData()
         let weekMinutes = Int(weeklyData.reduce(0, +))
+        print(weekMinutes)
+        print(sessionCount)
         let average = weekMinutes / sessionCount
         print(weeklyData)
         averageMinutesSevenDays.text = "Average Session Time: \(average) minutes"
@@ -184,6 +188,15 @@ extension AnalyticsViewController  {
                 }
             }
         }
+        
+        if sessionCount == 0 {
+            print("No data for last 7 days")
+            dataInLastSevenDays = false
+            sessionCount = 1
+        } else {
+            dataInLastSevenDays = true
+        }
+        
         print("Weekly data contains days:minutes: \(weeklyData)")
     }
     
@@ -232,14 +245,17 @@ extension AnalyticsViewController  {
         barChartView.data?.clearValues()
         dataEntries.removeAll()
         
-        if !pSessions.isEmpty {
+        fetchDataforChartEntries()
+        
+        if (dataInLastSevenDays) {
             print("data in sessions")
-            fetchDataforChartEntries()
             createDataEntries()
             assignDataEntries()
+
         } else {
             barChartView.data = .none
         }
+        
         barChartView.notifyDataSetChanged()
         barChartView.frame = CGRect(x: 0, y: 0, width: sevenDayPracticeBarChartView.frame.width, height: sevenDayPracticeBarChartView.frame.height)
         sevenDayPracticeBarChartView.addSubview(barChartView)
