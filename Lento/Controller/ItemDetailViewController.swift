@@ -76,8 +76,7 @@ class ItemDetailViewController: UITableViewController   {
             let controller = segue.destination as! SessionDetailViewController
             let indexPath = sender as! IndexPath
             let tag = tableView.cellForRow(at: indexPath)?.tag
-            controller.delegate = self
-            //controller.managedContext = managedContext
+            
             switch tag {
             case SessionItem.majorScale.rawValue:
                 //major scale
@@ -100,6 +99,8 @@ class ItemDetailViewController: UITableViewController   {
             default:
                 break
             }
+            controller.delegate = self
+            //controller.managedContext = managedContext
         }
     }
 
@@ -156,8 +157,14 @@ extension ItemDetailViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    
-        performSegue(withIdentifier: "toSessionInformation", sender: indexPath)
+        let tag = tableView.cellForRow(at: indexPath)?.tag
+        
+        if (tag! > 1) {
+            performSegue(withIdentifier: "toSessionInformation", sender: indexPath)
+        }
+        else {
+            return
+        }
     }
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -171,7 +178,7 @@ extension ItemDetailViewController {
 }
 
 
-//MARK: - Picker View Methods
+//MARK: - Minute Picker View Methods
 extension ItemDetailViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
